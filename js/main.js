@@ -100,10 +100,10 @@
     function measureStage() {
       var rect = stage.getBoundingClientRect();
       var isMobile = window.innerWidth <= 580;
-      var ropeTotal = isMobile ? 96 : 132;
+      var ropeTotal = isMobile ? 76 : 92;
       segLen = ropeTotal / SEGMENTS;
       anchorX = rect.width * 0.5;
-      anchorY = 4;
+      anchorY = 2;
       return rect;
     }
 
