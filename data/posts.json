@@ -1,0 +1,62 @@
+[
+  {
+    "id": "post-1",
+    "slug": "cut-local-business-google-ads-cpa-by-67-percent",
+    "title": "How I Cut a Local Business Google Ads CPA by 67% ($83.88 → $27.87)",
+    "category": "Google Ads & PPC",
+    "readTime": "5 Min Read",
+    "publishedAt": "2026-11-14",
+    "excerpt": "When I audited this local business account, their Cost Per Conversion was sitting at $83.88 with only 2 conversions. Within weeks, CPA dropped to $27.87 while conversions jumped 6.4x. Here is the exact 3-step blueprint.",
+    "takeaways": [
+      "Step 1 — Search Term Purge: Excluded informational, DIY, and competitor queries eating 35% of daily budget.",
+      "Step 2 — Intent Segmentation: Split broad ad groups into tight service + location themes.",
+      "Step 3 — Clean Conversion Signal: Fixed GTM triggers so Smart Bidding only optimized toward real calls and form submissions."
+    ],
+    "content": "<h3>The Problem: Bleeding Budget on Broad Match &amp; Broken Signals</h3><p>Most local service businesses think rising CPCs are to blame when their Cost Per Lead crosses $80+. When I audited this account (June 26–30), they had spent $168 for 162 clicks and only 2 conversions — an unsustainable <b>$83.88 CPA</b>.</p><h3>The 3-Step Fix</h3><p><b>1. Search Term Purge &amp; Negative Shield:</b> Over 35% of their budget was going to informational queries, DIY searches, and out-of-area clicks. I built a campaign-level and shared negative keyword list immediately.</p><p><b>2. Intent-Segmented Ad Groups:</b> Instead of one catch-all ad group, I separated high-intent transactional keywords by specific service and city modifier so the headline matched the exact search query.</p><p><b>3. GTM &amp; Conversion Action Cleanup:</b> I removed soft page-view micro-goals from Primary conversions so Google's bidding algorithm focused 100% on real phone calls and lead forms.</p><h3>The Verified Result</h3><p>In the August 1–9 sprint, clicks grew to 488, conversions jumped from 2.00 to <b>12.93</b>, and Cost Per Conversion dropped to <b>$27.87 (-67% CPA reduction)</b>.</p>"
+  },
+  {
+    "id": "post-2",
+    "slug": "why-ga4-and-google-ads-conversion-numbers-never-match",
+    "title": "Why Your GA4 & Google Ads Numbers Never Match (And How to Fix Double-Counting)",
+    "category": "Conversion Tracking",
+    "readTime": "6 Min Read",
+    "publishedAt": "2026-11-12",
+    "excerpt": "In 7 out of 10 audits I run, the ad account is either counting every page refresh of /thank-you as a new lead, or missing 40% of phone calls. Both destroy Smart Bidding efficiency.",
+    "takeaways": [
+      "Primary vs. Secondary Actions: Never set page-views, scroll depth, or unverified clicks as Primary in Google Ads.",
+      "Transaction / Event ID Deduplication: Pass a unique event_id in the dataLayer so refreshes never double-count.",
+      "Enhanced Conversions: Enable SHA-256 hashed email & phone matching in GTM to recover cross-device conversions."
+    ],
+    "content": "<h3>Why Smart Bidding Fails When Tracking is Broken</h3><p>Google's Target CPA and Maximize Conversions algorithms optimize relentlessly toward whatever you mark as a <b>Primary Conversion Action</b>. If a user refreshes your thank-you page three times and Google Ads counts 3 leads, the algorithm thinks that keyword is a goldmine.</p><h3>How I Fix Attribution Discrepancies</h3><p><b>1. Native Google Ads Tags + Enhanced Conversions:</b> While GA4 is essential for cross-channel analysis, relying solely on imported GA4 web events often introduces attribution lag. I wire native Google Ads conversion tags via GTM paired with Enhanced Conversions.</p><p><b>2. Unique Event IDs &amp; One-Per-Click Settings:</b> For lead generation, every form and call action must be set to count <i>One</i> conversion per click, while eCommerce transactions use dynamic <code>transaction_id</code> deduplication.</p>"
+  },
+  {
+    "id": "post-3",
+    "slug": "server-side-tracking-stape-io-meta-capi-playbook",
+    "title": "Server-Side Tracking with Stape.io & Meta CAPI: The 2026 Playbook",
+    "category": "Server-Side & Stape",
+    "readTime": "7 Min Read",
+    "publishedAt": "2026-11-10",
+    "excerpt": "Between Safari ITP, iOS privacy restrictions, and ad blockers, standard browser pixels lose 25–35% of real conversion data. Moving to a first-party Stape.io server container restores signal accuracy.",
+    "takeaways": [
+      "First-Party Custom Subdomain: Route events through a custom subdomain via Stape.io so cookies persist longer.",
+      "Browser + Server Deduplication: Fire both Web Pixel and Server CAPI/GA4 with matching event_id for 99%+ signal capture.",
+      "Higher Event Match Quality (EMQ): Better attribution lowers Meta CPMs and Google Ads Target CPA."
+    ],
+    "content": "<h3>Why Client-Side Pixels Are Losing 30% of Your Sales</h3><p>Modern browsers and ad-blockers block third-party scripts from firing or restrict cookie lifetimes to 24–72 hours. If a prospect clicks your Google or Meta ad on Monday and buys on Friday, a standard browser pixel often loses the GCLID/FBCLID.</p><h3>The Stape.io Server-Side Architecture</h3><p>By routing Google Tag Manager through a first-party cloud container on <b>Stape.io</b> or Google Cloud Platform, tracking requests come from your own domain. We pair browser events with server-side events using a shared <code>event_id</code> so platforms deduplicate seamlessly and capture nearly 100% of real conversions.</p>"
+  },
+  {
+    "id": "post-4",
+    "slug": "7-day-high-intent-search-sprint-303-conversions",
+    "title": "The 7-Day High-Intent Search Sprint: How We Hit 303 Conversions at 20.42% CVR",
+    "category": "Performance Marketing",
+    "readTime": "4 Min Read",
+    "publishedAt": "2026-11-08",
+    "excerpt": "For a US car rental client spending $3.91K in a single week, we couldn't afford a slow learning phase. Here is how we engineered a 20.42% conversion rate from day one.",
+    "takeaways": [
+      "Bottom-of-Funnel Keywords Only: Focused 100% of budget on urgent transactional queries.",
+      "Pre-Launch Negative Shield: Uploaded 400+ negative keywords before spending dollar one.",
+      "Call + Booking Friction Zero: Direct click-to-call extensions + mobile-first booking flow tracked end-to-end."
+    ],
+    "content": "<h3>Engineering Immediate Demand Capture</h3><p>When a local service or car rental business launches Google Ads, the fastest way to burn money is bidding on broad research terms. For this USA car rental campaign, we deployed <b>$3.91K over 7 days</b> strictly on urgent, bottom-of-funnel search intent.</p><h3>The Outcome</h3><p>Across 1,480 clicks, the campaign generated <b>303 conversions</b> at a <b>20.42% conversion rate</b> (~$12.90 cost per conversion), proving that tight intent mapping + pre-launch negative keyword shields outperform generic automated setups every time.</p>"
+  }
+]
