@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin CMS &amp; SEO/AIO Studio — Ferdous Wahid Fahim</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { background: #F1F5F9; color: var(--navy); }
+  .cms-shell {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+  }
+  .cms-side {
+    background: #0B1120;
+    color: #E2E8F0;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-right: 1px solid rgba(255,255,255,.08);
+  }
+  .cms-side .brand { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .cms-side .brand-text { color: #fff; }
+  .cms-nav-btn {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%; text-align: left;
+    font-family: var(--body); font-size: .88rem; font-weight: 600;
+    padding: 11px 14px; border-radius: 11px;
+    border: 0; background: transparent; color: #94A3B8;
+    cursor: pointer; transition: all .15s ease;
+  }
+  .cms-nav-btn:hover, .cms-nav-btn.is-active {
+    background: rgba(31, 116, 240, 0.22);
+    color: #fff;
+  }
+  .cms-side-foot {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    font-size: .75rem;
+    color: #64748B;
+    display: grid;
+    gap: 8px;
+  }
+  .cms-side-foot a { color: #93C5FD; font-weight: 600; }
+
+  .cms-main { padding: 28px 34px 60px; max-width: 1220px; width: 100%; }
+  .cms-top {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    margin-bottom: 24px;
+    background: #fff; padding: 18px 24px; border-radius: 18px;
+    border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+  }
+  .cms-top h1 { font-size: 1.35rem; margin: 0; }
+  .cms-top p { font-size: .82rem; color: var(--muted); margin-top: 2px; }
+  .cms-top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .cms-panel { display: none; }
+  .cms-panel.is-active { display: block; }
+
+  .cms-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .65fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .cms-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 22px;
+  }
+  .cms-card h2 { font-size: 1.12rem; margin-bottom: 14px; }
+  .cms-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .cms-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cms-field label { font-size: .76rem; font-weight: 700; color: var(--ink); }
+  .cms-field input, .cms-field select, .cms-field textarea {
+    font-family: var(--body); font-size: .88rem; color: var(--navy);
+    background: var(--bg-soft); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 12px;
+  }
+  .cms-field textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
+  .cms-toolbar {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;
+  }
+  .cms-tool {
+    font-family: var(--mono); font-size: .7rem; font-weight: 700;
+    padding: 5px 10px; border-radius: 6px;
+    border: 1px solid var(--line); background: #fff; cursor: pointer;
+  }
+  .cms-tool:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* Live SEO & AIO Score Card */
+  .seo-meter {
+    background: linear-gradient(155deg, #0F172A 0%, #1E293B 100%);
+    color: #fff; border-radius: 18px; padding: 22px; margin-bottom: 20px;
+  }
+  .sm-score-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .sm-score { font-family: var(--display); font-size: 2rem; font-weight: 800; color: #4ADE80; }
+  .sm-bar { height: 8px; border-radius: 100px; background: rgba(255,255,255,.12); overflow: hidden; margin-bottom: 14px; }
+  .sm-bar i { display: block; height: 100%; width: 85%; background: linear-gradient(90deg, #38BDF8, #4ADE80); transition: width .25s ease; }
+  .sm-checks { display: grid; gap: 7px; font-size: .76rem; color: #CBD5E1; }
+  .sm-checks span.ok { color: #4ADE80; }
+  .sm-checks span.warn { color: #FDE047; }
+
+  /* Post List Table */
+  .post-item-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 13px 14px; border: 1px solid var(--line); border-radius: 12px;
+    margin-bottom: 10px; background: var(--bg-soft);
+  }
+  .post-item-row b { display: block; font-size: .9rem; color: var(--navy); }
+  .post-item-row small { font-family: var(--mono); font-size: .7rem; color: var(--muted); }
+  .pir-actions { display: flex; gap: 6px; flex: none; }
+  .pir-btn {
+    font-size: .74rem; font-weight: 600; padding: 6px 11px; border-radius: 8px;
+    border: 1px solid var(--line); background: #fff; cursor: pointer;
+  }
+  .pir-btn.del { color: var(--red); border-color: #FECACA; }
+
+  .cms-toast {
+    display: none; margin-top: 12px; padding: 12px 15px; border-radius: 10px;
+    background: var(--green-tint); border: 1px solid #86EFAC; color: #14532D;
+    font-size: .84rem; font-weight: 600;
+  }
+  .cms-toast.is-visible { display: block; }
+
+  /* Password Protection Lock Screen */
+  .auth-gate {
+    position: fixed; inset: 0; z-index: 500;
+    background: radial-gradient(circle at 80% 15%, rgba(31, 116, 240, 0.25), transparent 55%), #070D1B;
+    display: grid; place-items: center; padding: 20px;
+  }
+  .auth-gate[hidden] { display: none; }
+  .auth-card {
+    background: #0F172A;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 22px;
+    padding: 34px 30px;
+    width: 100%; max-width: 410px;
+    color: #fff;
+    box-shadow: 0 30px 60px rgba(0,0,0,.6);
+    text-align: center;
+  }
+  .auth-card .brand { justify-content: center; margin-bottom: 18px; }
+  .auth-card .brand-text { color: #fff; }
+  .auth-card h2 { color: #fff; font-size: 1.35rem; margin-bottom: 6px; }
+  .auth-card p { font-size: .84rem; color: #94A3B8; margin-bottom: 20px; }
+  .auth-input {
+    width: 100%; font-family: var(--mono); font-size: .95rem;
+    padding: 12px 14px; border-radius: 11px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.06); color: #fff;
+    text-align: center; margin-bottom: 12px;
+  }
+  .auth-input:focus { outline: none; border-color: #38BDF8; background: rgba(255,255,255,.1); }
+  .auth-err { color: #FCA5A5; font-size: .78rem; margin-top: 8px; display: none; }
+  .auth-err.is-visible { display: block; }
+
+  @media (max-width: 960px) {
+    .cms-shell { grid-template-columns: 1fr; }
+    .cms-grid { grid-template-columns: 1fr; }
+    .cms-main { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Password Protection Lock Screen -->
+<div class="auth-gate" id="adminAuthGate">
+  <form class="auth-card" id="adminAuthForm">
+    <div class="brand">
+      <span class="brand-mark">F</span>
+      <span class="brand-text">Fahim <em>Private CMS</em></span>
+    </div>
+    <h2>🔒 Admin Access Protected</h2>
+    <p>Enter your private passcode to unlock the Blog, SEO &amp; Lead Studio.</p>
+    <input type="password" id="adminPassInput" class="auth-input" placeholder="Enter Admin Passcode" required autocomplete="current-password">
+    <button type="submit" class="btn btn-primary" style="width:100%;">Unlock Admin Studio →</button>
+    <div class="auth-err" id="adminAuthErr">✕ Incorrect passcode. Please try again.</div>
+    <a href="index.html" style="display:inline-block;margin-top:16px;font-size:.78rem;color:#64748B;">← Return to Public Website</a>
+  </form>
+</div>
+
+<div class="cms-shell" id="cmsWorkspace" hidden>
+  <!-- Sidebar -->
+  <aside class="cms-side">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">F</span>
+      <span class="brand-text">Fahim <em>CMS</em></span>
+    </a>
+
+    <button type="button" class="cms-nav-btn is-active" data-tab="tab-blog">✍️ Weekly Blog Studio</button>
+    <button type="button" class="cms-nav-btn" data-tab="tab-github">☁️ GitHub + Cloudflare Sync</button>
+    <button type="button" class="cms-nav-btn" data-tab="tab-leads">📥 Captured Leads (<span id="leadCountBadge">0</span>)</button>
+    <button type="button" class="cms-nav-btn" data-tab="tab-seo">🔐 Security &amp; SEO/AIO</button>
+
+    <div class="cms-side-foot">
+      <button type="button" id="btnLockAdmin" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;background:rgba(255,255,255,.06);color:#FCA5A5;border-color:rgba(252,165,165,.25);">🔒 Lock Admin Panel</button>
+      <a href="insights.html" target="_blank">View Live Insights Page ↗</a>
+      <a href="index.html">← Back to Homepage</a>
+    </div>
+  </aside>
+
+  <!-- Main Workspace -->
+  <main class="cms-main">
+    <div class="cms-top">
+      <div>
+        <h1>Content, SEO/AIO &amp; Lead Management Studio</h1>
+        <p>Write weekly Google Ads &amp; Tracking blog posts, optimize for Google + AI Search (ChatGPT/Perplexity), and sync with GitHub &amp; Cloudflare.</p>
+      </div>
+      <div class="cms-top-actions">
+        <button type="button" id="btnExportJson" class="btn btn-ghost btn-sm">⬇ Download posts.json</button>
+        <a href="insights.html" class="btn btn-primary btn-sm" target="_blank">Preview Insights ↗</a>
+      </div>
+    </div>
+
+    <!-- ══════════════ TAB 1: WEEKLY BLOG STUDIO ══════════════ -->
+    <section class="cms-panel is-active" id="tab-blog">
+      <div class="cms-grid">
+        <div>
+          <form class="cms-card" id="cmsPostForm">
+            <h2 id="formHeading">✍️ Write / Edit Weekly Blog Post</h2>
+            <input type="hidden" id="cmsPostId" value="">
+
+            <div class="cms-field">
+              <label for="cmsTitle">Article Title (Include primary keyword e.g. Google Ads, GA4, GTM, Stape) *</label>
+              <input type="text" id="cmsTitle" placeholder="e.g. How to Fix GA4 & Google Ads Conversion Discrepancies in 2026" required>
+            </div>
+
+            <div class="cms-row">
+              <div class="cms-field">
+                <label for="cmsSlug">SEO URL Slug (auto-generated)</label>
+                <input type="text" id="cmsSlug" placeholder="how-to-fix-ga4-google-ads-discrepancies" required>
+              </div>
+              <div class="cms-field">
+                <label for="cmsCategory">Topic / Category</label>
+                <select id="cmsCategory">
+                  <option value="Google Ads & PPC">Google Ads &amp; PPC</option>
+                  <option value="Conversion Tracking">Conversion Tracking (GA4/GTM)</option>
+                  <option value="Server-Side & Stape">Server-Side &amp; Stape.io</option>
+                  <option value="Performance Marketing">Performance Marketing &amp; CRO</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cms-row">
+              <div class="cms-field">
+                <label for="cmsReadTime">Reading Time</label>
+                <input type="text" id="cmsReadTime" value="5 Min Read">
+              </div>
+              <div class="cms-field">
+                <label for="cmsDate">Publish Date</label>
+                <input type="date" id="cmsDate">
+              </div>
+            </div>
+
+            <div class="cms-field">
+              <label for="cmsExcerpt">Executive Summary / Meta Description (120–160 chars for Google &amp; AI Overviews) *</label>
+              <textarea id="cmsExcerpt" style="min-height:70px;" placeholder="Summarize the core problem and concrete result in 2 sentences..." required></textarea>
+            </div>
+
+            <div class="cms-field">
+              <label for="cmsTakeaways">3 Key Takeaways (One per line — AI Search engines quote these directly!)</label>
+              <textarea id="cmsTakeaways" style="min-height:82px;" placeholder="Step 1 — Audit search terms and exclude non-buyer intent.&#10;Step 2 — Wire GTM + Enhanced Conversions.&#10;Step 3 — Scale Target CPA on verified leads."></textarea>
+            </div>
+
+            <div class="cms-field">
+              <label for="cmsContent">Full Article Content (HTML / Paragraphs)</label>
+              <div class="cms-toolbar">
+                <button type="button" class="cms-tool" data-insert="<h3>Section Heading</h3>">H3 Heading</button>
+                <button type="button" class="cms-tool" data-insert="<p>Paragraph text here...</p>">Paragraph</button>
+                <button type="button" class="cms-tool" data-insert="<b>bold text</b>">Bold</button>
+                <button type="button" class="cms-tool" data-insert="<code>event_id</code>">Code</button>
+              </div>
+              <textarea id="cmsContent" style="min-height:170px;" placeholder="<h3>The Problem</h3><p>Write your deep-dive breakdown here...</p>"></textarea>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button type="submit" class="btn btn-primary">💾 Save &amp; Publish Post</button>
+              <button type="button" id="btnResetForm" class="btn btn-ghost">New Blank Post</button>
+            </div>
+            <div id="cmsToast" class="cms-toast"></div>
+          </form>
+        </div>
+
+        <!-- Right Column: Live SEO/AIO Score + Existing Posts List -->
+        <div>
+          <div class="seo-meter">
+            <div class="sm-score-row">
+              <span style="font-family:var(--mono);font-size:.72rem;color:#93C5FD;font-weight:700;">LIVE SEO &amp; AIO SCORE</span>
+              <span class="sm-score" id="seoScoreVal">92%</span>
+            </div>
+            <div class="sm-bar"><i id="seoScoreBar" style="width:92%;"></i></div>
+            <div class="sm-checks" id="seoCheckList">
+              <span class="ok">✓ High-intent PPC/Tracking keywords detected</span>
+              <span class="ok">✓ Structured takeaways ready for AI Overviews</span>
+              <span class="ok">✓ Clean SEO slug generated</span>
+            </div>
+          </div>
+
+          <div class="cms-card">
+            <h2>📚 Published Articles (<span id="postCount">0</span>)</h2>
+            <div id="cmsPostList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ TAB 2: GITHUB + CLOUDFLARE LIVE SYNC ══════════════ -->
+    <section class="cms-panel" id="tab-github">
+      <div class="cms-card">
+        <h2>☁️ GitHub + Cloudflare Pages Dynamic Publishing ($0 Cost Forever)</h2>
+        <p style="font-size:.9rem;color:var(--body-txt);margin-bottom:18px;max-width:72ch;">
+          Connect your GitHub repository below. Whenever you write or edit a blog post in Tab 1 and click <b>"Push Live to GitHub"</b>, this Admin Panel commits the updated <code>data/posts.json</code> directly to your GitHub repo — and <b>Cloudflare Pages</b> automatically updates your live website worldwide in ~15 seconds!
+        </p>
+
+        <div class="cms-row">
+          <div class="cms-field">
+            <label for="ghOwner">GitHub Username / Organization</label>
+            <input type="text" id="ghOwner" placeholder="e.g. ferdousfahim">
+          </div>
+          <div class="cms-field">
+            <label for="ghRepo">Repository Name</label>
+            <input type="text" id="ghRepo" placeholder="e.g. fahim-website">
+          </div>
+        </div>
+
+        <div class="cms-row">
+          <div class="cms-field">
+            <label for="ghBranch">Branch</label>
+            <input type="text" id="ghBranch" value="main">
+          </div>
+          <div class="cms-field">
+            <label for="ghToken">GitHub Personal Access Token (Stored only in your browser)</label>
+            <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <button type="button" id="btnPushGithub" class="btn btn-primary">🚀 Push data/posts.json Live to GitHub</button>
+          <button type="button" id="btnSaveGhConfig" class="btn btn-ghost">Save GitHub Settings</button>
+        </div>
+        <div id="ghStatus" class="cms-toast"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════ TAB 3: CAPTURED LEADS INBOX ══════════════ -->
+    <section class="cms-panel" id="tab-leads">
+      <div class="cms-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+          <h2 style="margin:0;">📥 Leads Submitted From Website</h2>
+          <button type="button" id="btnExportLeadsCsv" class="btn btn-ghost btn-sm">⬇ Export Leads CSV</button>
+        </div>
+        <div id="cmsLeadList"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════ TAB 4: SECURITY & SEO/AIO CHECKLIST ══════════════ -->
+    <section class="cms-panel" id="tab-seo">
+      <div class="cms-card">
+        <h2>🔐 Change Admin Passcode</h2>
+        <p style="font-size:.86rem;color:var(--muted);margin-bottom:14px;">Set a new private passcode for unlocking <code>/admin.html</code> on this browser.</p>
+        <div class="cms-row">
+          <div class="cms-field">
+            <label for="newAdminPass">New Passcode</label>
+            <input type="password" id="newAdminPass" placeholder="Enter new passcode">
+          </div>
+          <div class="cms-field" style="justify-content:flex-end;">
+            <button type="button" id="btnSavePass" class="btn btn-primary btn-sm">Update Passcode</button>
+          </div>
+        </div>
+        <div id="passToast" class="cms-toast"></div>
+      </div>
+
+      <div class="cms-card">
+        <h2>🚀 Built-In Google SEO &amp; AI Search (AIO / GEO) Architecture</h2>
+        <ul class="check-list" style="margin-top:14px;">
+          <li><b>llms.txt Installed (<a href="llms.txt" target="_blank" style="color:var(--blue);">/llms.txt</a>):</b> ChatGPT, Perplexity, Claude, and Gemini read this structured profile file to recommend Ferdous Wahid Fahim for Google Ads &amp; Conversion Tracking queries.</li>
+          <li><b>JSON-LD ProfessionalService &amp; Person Schema:</b> Embedded directly in <code>index.html</code> with your certification ID (195327298), contact info, and 5 target countries (US, UK, CA, AU, NZ).</li>
+          <li><b>Open Graph &amp; Twitter Large Image Cards:</b> Configured across all 5 pages using <code>assets/og-preview.png</code>.</li>
+          <li><b>Weekly Blog Takeaway Bullets:</b> Every blog post includes 3 structured takeaway bullets at the top — the #1 format extracted by Google AI Overviews.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ── Password Protection Gate (Default: Fahim@2026) ── */
+  var authGate = document.getElementById("adminAuthGate");
+  var workspace = document.getElementById("cmsWorkspace");
+  var authForm = document.getElementById("adminAuthForm");
+  var passInput = document.getElementById("adminPassInput");
+  var authErr = document.getElementById("adminAuthErr");
+  var btnLock = document.getElementById("btnLockAdmin");
+
+  function getSavedPass() {
+    return localStorage.getItem("fahim_admin_passcode") || "Fahim@2026";
+  }
+
+  function unlockWorkspace() {
+    sessionStorage.setItem("fahim_admin_unlocked", "1");
+    if (authGate) authGate.hidden = true;
+    if (workspace) workspace.hidden = false;
+  }
+
+  if (sessionStorage.getItem("fahim_admin_unlocked") === "1") {
+    unlockWorkspace();
+  }
+
+  if (authForm) {
+    authForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var val = (passInput.value || "").trim();
+      if (val === getSavedPass()) {
+        authErr.classList.remove("is-visible");
+        unlockWorkspace();
+      } else {
+        authErr.classList.add("is-visible");
+        passInput.value = "";
+        passInput.focus();
+      }
+    });
+  }
+
+  if (btnLock) {
+    btnLock.addEventListener("click", function () {
+      sessionStorage.removeItem("fahim_admin_unlocked");
+      if (workspace) workspace.hidden = true;
+      if (authGate) authGate.hidden = false;
+      if (passInput) passInput.value = "";
+    });
+  }
+
+  var btnSavePass = document.getElementById("btnSavePass");
+  var passToast = document.getElementById("passToast");
+  if (btnSavePass) {
+    btnSavePass.addEventListener("click", function () {
+      var np = (document.getElementById("newAdminPass").value || "").trim();
+      if (np.length < 4) {
+        passToast.textContent = "⚠️ Passcode must be at least 4 characters.";
+        passToast.classList.add("is-visible");
+        return;
+      }
+      localStorage.setItem("fahim_admin_passcode", np);
+      document.getElementById("newAdminPass").value = "";
+      passToast.textContent = "✓ Admin passcode updated successfully!";
+      passToast.classList.add("is-visible");
+    });
+  }
+
+  /* ── Tab Navigation ── */
+  var tabBtns = document.querySelectorAll(".cms-nav-btn");
+  var panels = document.querySelectorAll(".cms-panel");
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-tab");
+      tabBtns.forEach(function (b) { b.classList.remove("is-active"); });
+      panels.forEach(function (p) { p.classList.toggle("is-active", p.id === target); });
+      btn.classList.add("is-active");
+    });
+  });
+
+  /* ── Default / Loaded Posts ── */
+  var posts = [];
+  var dateInput = document.getElementById("cmsDate");
+  if (dateInput) dateInput.value = new Date().toISOString().slice(0, 10);
+
+  function savePostsToLocal() {
+    localStorage.setItem("fahim_cms_posts", JSON.stringify(posts));
+    renderPostList();
+  }
+
+  function loadInitialPosts() {
+    try {
+      var local = JSON.parse(localStorage.getItem("fahim_cms_posts") || "null");
+      if (local && Array.isArray(local) && local.length > 0) {
+        posts = local;
+        renderPostList();
+        return;
+      }
+    } catch (_) {}
+
+    fetch("data/posts.json")
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        posts = data;
+        savePostsToLocal();
+      })
+      .catch(function () {});
+  }
+
+  function renderPostList() {
+    var listEl = document.getElementById("cmsPostList");
+    var countEl = document.getElementById("postCount");
+    if (countEl) countEl.textContent = posts.length;
+    if (!listEl) return;
+
+    listEl.innerHTML = posts.map(function (p) {
+      return (
+        '<div class="post-item-row">' +
+          '<div><b>' + p.title + '</b><small>' + (p.category || "") + ' · ' + (p.publishedAt || "") + '</small></div>' +
+          '<div class="pir-actions">' +
+            '<button type="button" class="pir-btn edit-btn" data-id="' + p.id + '">Edit</button>' +
+            '<button type="button" class="pir-btn del del-btn" data-id="' + p.id + '">Delete</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+
+    listEl.querySelectorAll(".edit-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-id");
+        var found = posts.find(function (x) { return x.id === id; });
+        if (!found) return;
+        document.getElementById("cmsPostId").value = found.id;
+        document.getElementById("cmsTitle").value = found.title || "";
+        document.getElementById("cmsSlug").value = found.slug || "";
+        document.getElementById("cmsCategory").value = found.category || "Google Ads & PPC";
+        document.getElementById("cmsReadTime").value = found.readTime || "5 Min Read";
+        document.getElementById("cmsDate").value = found.publishedAt || "";
+        document.getElementById("cmsExcerpt").value = found.excerpt || "";
+        document.getElementById("cmsTakeaways").value = (found.takeaways || []).join("\n");
+        document.getElementById("cmsContent").value = found.content || "";
+        document.getElementById("formHeading").textContent = "✏️ Editing: " + found.title;
+        evaluateSeoScore();
+      });
+    });
+
+    listEl.querySelectorAll(".del-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-id");
+        posts = posts.filter(function (x) { return x.id !== id; });
+        savePostsToLocal();
+      });
+    });
+  }
+
+  /* Auto-slug & Live SEO/AIO Score Analyzer */
+  var titleEl = document.getElementById("cmsTitle");
+  var slugEl = document.getElementById("cmsSlug");
+  var excerptEl = document.getElementById("cmsExcerpt");
+  var takeawaysEl = document.getElementById("cmsTakeaways");
+  var contentEl = document.getElementById("cmsContent");
+
+  function evaluateSeoScore() {
+    var t = (titleEl.value || "").trim();
+    var ex = (excerptEl.value || "").trim();
+    var tk = (takeawaysEl.value || "").trim();
+    var co = (contentEl.value || "").trim();
+
+    var score = 40;
+    var checks = [];
+
+    if (t.length >= 25 && t.length <= 85) {
+      score += 15;
+      checks.push('<span class="ok">✓ Title length is optimal for Google & AI Search</span>');
+    } else {
+      checks.push('<span class="warn">⚡ Aim for 25–85 characters in the title</span>');
+    }
+
+    if (/google ads|ga4|gtm|tracking|cpa|roas|stape|conversion/i.test(t + " " + ex)) {
+      score += 20;
+      checks.push('<span class="ok">✓ Core authority keywords (Google Ads / GA4 / GTM / CPA) present</span>');
+    } else {
+      checks.push('<span class="warn">⚡ Include keywords like Google Ads, GA4, GTM, or CPA</span>');
+    }
+
+    if (tk.split("\n").filter(Boolean).length >= 2) {
+      score += 15;
+      checks.push('<span class="ok">✓ Key Takeaway bullets ready for AI Overview extraction</span>');
+    } else {
+      checks.push('<span class="warn">⚡ Add at least 2–3 takeaway bullets for AI Search (AIO)</span>');
+    }
+
+    if (co.length >= 150) {
+      score += 10;
+      checks.push('<span class="ok">✓ Article body has structured depth</span>');
+    }
+
+    var scoreEl = document.getElementById("seoScoreVal");
+    var barEl = document.getElementById("seoScoreBar");
+    var listEl = document.getElementById("seoCheckList");
+    if (scoreEl) scoreEl.textContent = score + "%";
+    if (barEl) barEl.style.width = score + "%";
+    if (listEl) listEl.innerHTML = checks.join("");
+  }
+
+  if (titleEl) {
+    titleEl.addEventListener("input", function () {
+      if (!document.getElementById("cmsPostId").value) {
+        slugEl.value = titleEl.value
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "");
+      }
+      evaluateSeoScore();
+    });
+  }
+  [excerptEl, takeawaysEl, contentEl].forEach(function (el) {
+    if (el) el.addEventListener("input", evaluateSeoScore);
+  });
+
+  /* Formatting Toolbar */
+  document.querySelectorAll(".cms-tool").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var snippet = btn.getAttribute("data-insert") || "";
+      contentEl.value += (contentEl.value ? "\n" : "") + snippet;
+      evaluateSeoScore();
+    });
+  });
+
+  /* Save Post */
+  var postForm = document.getElementById("cmsPostForm");
+  var toast = document.getElementById("cmsToast");
+  if (postForm) {
+    postForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var id = document.getElementById("cmsPostId").value || ("post-" + Date.now());
+      var newPost = {
+        id: id,
+        slug: slugEl.value.trim() || ("post-" + Date.now()),
+        title: titleEl.value.trim(),
+        category: document.getElementById("cmsCategory").value,
+        readTime: document.getElementById("cmsReadTime").value || "5 Min Read",
+        publishedAt: document.getElementById("cmsDate").value || new Date().toISOString().slice(0, 10),
+        excerpt: excerptEl.value.trim(),
+        takeaways: takeawaysEl.value.split("\n").map(function (s) { return s.trim(); }).filter(Boolean),
+        content: contentEl.value.trim()
+      };
+
+      var existingIdx = posts.findIndex(function (x) { return x.id === id; });
+      if (existingIdx >= 0) posts[existingIdx] = newPost;
+      else posts.unshift(newPost);
+
+      savePostsToLocal();
+      if (toast) {
+        toast.textContent = "✓ Article saved & published! Open Insights page to see it live, or push to GitHub in Tab 2.";
+        toast.classList.add("is-visible");
+      }
+    });
+  }
+
+  var btnReset = document.getElementById("btnResetForm");
+  if (btnReset) {
+    btnReset.addEventListener("click", function () {
+      postForm.reset();
+      document.getElementById("cmsPostId").value = "";
+      document.getElementById("cmsDate").value = new Date().toISOString().slice(0, 10);
+      document.getElementById("formHeading").textContent = "✍️ Write / Edit Weekly Blog Post";
+      if (toast) toast.classList.remove("is-visible");
+    });
+  }
+
+  /* Download posts.json */
+  var btnExport = document.getElementById("btnExportJson");
+  if (btnExport) {
+    btnExport.addEventListener("click", function () {
+      var blob = new Blob([JSON.stringify(posts, null, 2)], { type: "application/json" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "posts.json";
+      a.click();
+    });
+  }
+
+  /* ── GitHub API Direct Sync ── */
+  var ghConfig = JSON.parse(localStorage.getItem("fahim_gh_config") || "{}");
+  if (ghConfig.owner) document.getElementById("ghOwner").value = ghConfig.owner;
+  if (ghConfig.repo) document.getElementById("ghRepo").value = ghConfig.repo;
+  if (ghConfig.branch) document.getElementById("ghBranch").value = ghConfig.branch;
+  if (ghConfig.token) document.getElementById("ghToken").value = ghConfig.token;
+
+  function saveGhSettings() {
+    var cfg = {
+      owner: document.getElementById("ghOwner").value.trim(),
+      repo: document.getElementById("ghRepo").value.trim(),
+      branch: document.getElementById("ghBranch").value.trim() || "main",
+      token: document.getElementById("ghToken").value.trim()
+    };
+    localStorage.setItem("fahim_gh_config", JSON.stringify(cfg));
+    return cfg;
+  }
+
+  var btnSaveGh = document.getElementById("btnSaveGhConfig");
+  var ghStatus = document.getElementById("ghStatus");
+  if (btnSaveGh) {
+    btnSaveGh.addEventListener("click", function () {
+      saveGhSettings();
+      ghStatus.textContent = "✓ GitHub repository settings saved in your browser.";
+      ghStatus.classList.add("is-visible");
+    });
+  }
+
+  var btnPushGh = document.getElementById("btnPushGithub");
+  if (btnPushGh) {
+    btnPushGh.addEventListener("click", function () {
+      var cfg = saveGhSettings();
+      if (!cfg.owner || !cfg.repo || !cfg.token) {
+        ghStatus.textContent = "⚠️ Please enter your GitHub Username, Repository Name, and Personal Access Token first.";
+        ghStatus.classList.add("is-visible");
+        return;
+      }
+      ghStatus.textContent = "⏳ Pushing data/posts.json to GitHub...";
+      ghStatus.classList.add("is-visible");
+
+      var apiUrl = "https://api.github.com/repos/" + cfg.owner + "/" + cfg.repo + "/contents/data/posts.json";
+      fetch(apiUrl + "?ref=" + encodeURIComponent(cfg.branch), {
+        headers: { "Authorization": "Bearer " + cfg.token, "Accept": "application/vnd.github+json" }
+      })
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .then(function (meta) {
+          var contentB64 = btoa(unescape(encodeURIComponent(JSON.stringify(posts, null, 2))));
+          var body = {
+            message: "Update blog posts via Fahim Admin CMS",
+            content: contentB64,
+            branch: cfg.branch
+          };
+          if (meta && meta.sha) body.sha = meta.sha;
+          return fetch(apiUrl, {
+            method: "PUT",
+            headers: {
+              "Authorization": "Bearer " + cfg.token,
+              "Accept": "application/vnd.github+json",
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+          });
+        })
+        .then(function (res) {
+          if (!res.ok) throw new Error("GitHub API status " + res.status);
+          ghStatus.textContent = "✅ Successfully pushed data/posts.json to GitHub! Cloudflare Pages will deploy it live in ~15 seconds.";
+        })
+        .catch(function (err) {
+          ghStatus.textContent = "⚠️ Push failed (" + err.message + "). Check your repo name & token permissions.";
+        });
+    });
+  }
+
+  /* ── Captured Leads Inbox ── */
+  function renderLeads() {
+    var leads = [];
+    try {
+      leads = JSON.parse(localStorage.getItem("fahim_portfolio_leads") || "[]");
+    } catch (_) {}
+    var badge = document.getElementById("leadCountBadge");
+    if (badge) badge.textContent = leads.length;
+    var container = document.getElementById("cmsLeadList");
+    if (!container) return;
+    if (leads.length === 0) {
+      container.innerHTML = '<p style="color:var(--muted);font-size:.88rem;">No local leads recorded in this browser yet. Leads submitted via the form are also sent directly to ferdouswahidfahim24@gmail.com.</p>';
+      return;
+    }
+    container.innerHTML = leads.map(function (l) {
+      return (
+        '<div class="post-item-row">' +
+          '<div>' +
+            '<b>' + (l.name || "Prospect") + ' — ' + (l.service || "") + ' (' + (l.budget || "") + ')</b>' +
+            '<small>Email: ' + (l.email || "-") + ' · Phone/WA: ' + (l.phone || "-") + ' · Site: ' + (l.site || "-") + '</small>' +
+            (l.goal ? '<p style="font-size:.8rem;color:var(--body-txt);margin-top:4px;">' + l.goal + '</p>' : '') +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+  }
+
+  var btnCsv = document.getElementById("btnExportLeadsCsv");
+  if (btnCsv) {
+    btnCsv.addEventListener("click", function () {
+      var leads = JSON.parse(localStorage.getItem("fahim_portfolio_leads") || "[]");
+      var rows = [["Name", "Email", "Phone", "Website", "Service", "Budget", "Goal", "Date"]];
+      leads.forEach(function (l) {
+        rows.push([l.name || "", l.email || "", l.phone || "", l.site || "", l.service || "", l.budget || "", (l.goal || "").replace(/\n/g, " "), l.submittedAt || ""]);
+      });
+      var csv = rows.map(function (r) { return r.map(function (c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(","); }).join("\n");
+      var blob = new Blob([csv], { type: "text/csv" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "fahim-leads.csv";
+      a.click();
+    });
+  }
+
+  loadInitialPosts();
+  renderLeads();
+})();
+</script>
+</body>
+</html>
