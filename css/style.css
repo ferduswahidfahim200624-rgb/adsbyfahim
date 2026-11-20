@@ -1007,262 +1007,58 @@ section { padding: clamp(54px, 7.5vw, 90px) 0; }
 }
 .pkg-card .btn { margin-top: auto; width: 100%; }
 
-/* ─────────────── toolkit (Strategic Google Ads & Tracking Ecosystem) ─────────────── */
+/* ─────────────── toolkit (Simple Clean 6-Icon Row — Reference Style) ─────────────── */
 .toolkit {
-  position: relative;
-  background:
-    radial-gradient(620px 380px at 50% 48%, rgba(31, 116, 240, 0.09), transparent 70%),
-    linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%);
-  overflow: hidden;
+  background: #FFFFFF;
+  padding: clamp(50px, 7vw, 84px) 0;
 }
-.toolkit-grid {
+.tk-simple-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: clamp(24px, 3.6vw, 44px);
-  align-items: center;
-  max-width: 1140px;
-  margin: 0 auto;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(18px, 3vw, 34px);
+  max-width: 1020px;
+  margin: 18px auto 0;
+  text-align: center;
 }
-.skill-col {
+.tk-simple-item {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-}
-.tk-col-head {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  font-family: var(--mono);
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--navy);
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 5px 12px;
-  border-radius: 100px;
-  margin-bottom: 2px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-}
-.tk-col-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-.tk-col-dot.blue { background: var(--blue); box-shadow: 0 0 8px rgba(31, 116, 240, 0.55); }
-.tk-col-dot.green { background: var(--green); box-shadow: 0 0 8px rgba(22, 163, 74, 0.55); }
-
-.skill {
-  margin-bottom: 0;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 13px 15px 12px;
-  box-shadow: 0 4px 14px -6px rgba(15, 23, 42, 0.06);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.skill:hover {
-  transform: translateY(-2px);
-  border-color: #93C5FD;
-  box-shadow: 0 14px 28px -12px rgba(31, 116, 240, 0.18);
-}
-.skill.is-featured {
-  background: linear-gradient(145deg, #F0F7FF 0%, #FFFFFF 65%);
-  border-color: #93C5FD;
-  box-shadow: 0 10px 26px -10px rgba(31, 116, 240, 0.2);
-}
-
-.skill-card-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 9px;
-}
-.sk-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  flex: none;
-  background: var(--bg-soft);
-  border: 1px solid rgba(15, 23, 42, 0.06);
-}
-.sk-logo.gads { background: #FFFDF5; border-color: #FDE68A; box-shadow: 0 4px 10px rgba(251, 188, 4, 0.16); }
-.sk-logo.conv { background: #ECFDF5; border-color: #A7F3D0; }
-.sk-logo.gtm  { background: #EFF6FF; border-color: #BFDBFE; }
-.sk-logo.stape { background: #EEF2FF; border-color: #C7D2FE; }
-.sk-logo.call { background: #F0F9FF; border-color: #BAE6FD; }
-.sk-logo.intent { background: #EFF6FF; border-color: #BFDBFE; }
-.sk-logo.cro  { background: #ECFDF5; border-color: #A7F3D0; }
-.sk-logo.ecom { background: #FFFBEB; border-color: #FDE68A; }
-
-.sk-meta {
-  flex: 1;
-  min-width: 0;
-}
-.skill-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  font-size: .86rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 2px;
-}
-.skill-top b {
-  font-family: var(--mono);
-  font-weight: 700;
-  color: var(--blue);
-  background: var(--blue-soft);
-  padding: 2px 7px;
-  border-radius: 6px;
-  font-size: .74rem;
-  flex: none;
-}
-.sk-sub {
-  display: block;
-  font-size: .71rem;
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.bar { height: 7px; border-radius: 100px; background: #E2E8F0; overflow: hidden; }
-.bar i {
-  display: block; height: 100%; width: 0; border-radius: 100px;
-  background: linear-gradient(90deg, var(--blue-2), var(--blue-dark));
-  transition: width 1.1s cubic-bezier(.33,1,.68,1);
-}
-.skill.is-featured .bar i {
-  background: linear-gradient(90deg, #FBBC04 0%, #34A853 45%, #4285F4 100%);
-}
-.bar.fill i { width: var(--w); }
-
-/* Center Portrait Hub with Orbiting Strategic Platform Badges */
-.lens-hub {
-  position: relative;
-  padding: 18px 26px;
-  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 14px 8px;
+  border-radius: 18px;
+  transition: transform .2s ease;
 }
-.lens-hub::before {
-  content: "";
-  position: absolute;
-  width: 346px;
-  height: 346px;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(31, 116, 240, 0.28);
-  pointer-events: none;
+.tk-simple-item:hover {
+  transform: translateY(-4px);
 }
-.hub-badge {
-  position: absolute;
-  z-index: 6;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(31, 116, 240, 0.22);
-  border-radius: 13px;
-  padding: 7px 11px;
-  box-shadow: 0 12px 26px -8px rgba(15, 23, 42, 0.2);
-  pointer-events: none;
-  animation: floaty 5s ease-in-out infinite;
-}
-.hub-badge div {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.18;
-}
-.hub-badge b {
-  font-family: var(--display);
-  font-size: .74rem;
-  font-weight: 800;
-  color: var(--navy);
-}
-.hub-badge span {
-  font-family: var(--mono);
-  font-size: .61rem;
-  font-weight: 600;
-  color: var(--blue);
-}
-.hb-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  flex: none;
-}
-.hb-dot.green { background: #16A34A; box-shadow: 0 0 8px #16A34A; }
-.hb-dot.blue  { background: #1F74F0; box-shadow: 0 0 8px #1F74F0; }
-
-.hb-tl { top: 4px; left: -6px; animation-delay: 0s; }
-.hb-tr { top: 14px; right: -10px; animation-delay: 1.1s; }
-.hb-bl { bottom: 22px; left: -8px; animation-delay: 2s; }
-.hb-br { bottom: 14px; right: -8px; animation-delay: 2.8s; }
-
-/* Bottom Strategic Architecture Flow Strip */
-.tk-flow-strip {
-  margin-top: 32px;
-  background: linear-gradient(135deg, #0F172A 0%, #172542 100%);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  border-radius: 20px;
-  padding: 16px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  color: #fff;
-  box-shadow: 0 20px 42px -18px rgba(15, 23, 42, 0.38);
-}
-.tkf-item {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-.tkf-step {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: rgba(56, 189, 248, 0.14);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: #38BDF8;
-  font-family: var(--mono);
-  font-size: .74rem;
-  font-weight: 700;
+.tks-icon {
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
-  flex: none;
+  margin-bottom: 14px;
 }
-.tkf-item.is-result .tkf-step {
-  background: rgba(74, 222, 128, 0.18);
-  border-color: rgba(74, 222, 128, 0.5);
-  color: #4ADE80;
-}
-.tkf-item div {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.28;
-}
-.tkf-item b {
+.tks-pct {
   font-family: var(--display);
-  font-size: .82rem;
-  font-weight: 700;
-  color: #fff;
+  font-size: clamp(1.55rem, 2.5vw, 1.95rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 6px;
 }
-.tkf-item span {
-  font-size: .7rem;
-  color: #94A3B8;
+.tks-name {
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--muted);
 }
-.tkf-arrow {
-  font-family: var(--mono);
-  color: #38BDF8;
-  font-size: 1rem;
-  opacity: .75;
+
+@media (max-width: 900px) {
+  .tk-simple-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px 16px;
+  }
 }
 
 /* ─────────────── about & timeline ─────────────── */
@@ -2974,53 +2770,26 @@ section { padding: clamp(54px, 7.5vw, 90px) 0; }
     display: none;
   }
 
-  /* ── 3. TOOLKIT + PHOTO + 2x2 ICON STAT GRID (Matches Reference Screenshot) ── */
-  .toolkit-grid {
-    gap: 18px;
+  /* ── 3. MY TOOLKIT: Clean 2x3 Icon + Percentage Grid on Mobile (Reference Style) ── */
+  .tk-simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 14px;
+    margin-top: 10px;
   }
-  .lens-hub {
-    padding: 12px 10px;
+  .tk-simple-item {
+    padding: 12px 6px;
   }
-  .lens-hub::before {
-    width: 280px;
-    height: 280px;
+  .tks-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
   }
-  .hub-badge {
-    padding: 5px 8px;
-    border-radius: 10px;
+  .tks-pct {
+    font-size: 1.55rem;
+    margin-bottom: 4px;
   }
-  .hub-badge b { font-size: .66rem; }
-  .hub-badge span { font-size: .55rem; }
-  .hb-tl { top: 0; left: -2px; }
-  .hb-tr { top: 6px; right: -2px; }
-  .hb-bl { bottom: 12px; left: -2px; }
-  .hb-br { bottom: 8px; right: -2px; }
-  .lens-frame {
-    width: 256px;
-    height: 284px;
-    border-radius: 22px;
-  }
-  /* Hide the second 4-bar column on mobile so it stays crisp with 4 core bars */
-  .toolkit-grid .skill-col:last-child {
-    display: none;
-  }
-  .skill {
-    margin-bottom: 0;
-    padding: 11px 12px;
-  }
-  .skill-top {
-    font-size: .8rem;
-    margin-bottom: 2px;
-  }
-  .tk-flow-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 14px;
-    margin-top: 20px;
-  }
-  .tkf-arrow {
-    display: none;
+  .tks-name {
+    font-size: .82rem;
   }
 
   /* ── 4. ABOUT ME: Show 2x2 Stat Card FIRST, Trim Long Paragraphs ── */
