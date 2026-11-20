@@ -472,12 +472,26 @@
   var spendRange = document.getElementById("calcSpend");
   var cvrRange = document.getElementById("calcCvr");
   var cpcRange = document.getElementById("calcCpc");
+  var presetBtns = document.querySelectorAll(".cp-btn");
+
+  function updateRangeFill(input) {
+    if (!input) return;
+    var min = parseFloat(input.min) || 0;
+    var max = parseFloat(input.max) || 100;
+    var val = parseFloat(input.value) || 0;
+    var pct = ((val - min) / (max - min)) * 100;
+    input.style.background = "linear-gradient(90deg, #1F74F0 " + pct + "%, #E2E8F0 " + pct + "%)";
+  }
 
   function updateCalculator() {
     if (!spendRange || !cvrRange || !cpcRange) return;
     var spend = parseFloat(spendRange.value) || 5000;
     var cvr = parseFloat(cvrRange.value) || 6;
     var cpc = parseFloat(cpcRange.value) || 4.5;
+
+    updateRangeFill(spendRange);
+    updateRangeFill(cvrRange);
+    updateRangeFill(cpcRange);
 
     var spendLbl = document.getElementById("calcSpendVal");
     var cvrLbl = document.getElementById("calcCvrVal");
@@ -488,21 +502,32 @@
     if (cpcLbl) cpcLbl.textContent = "$" + cpc.toFixed(2);
 
     var clicks = spend / cpc;
-    var currentLeads = Math.round(clicks * (cvr / 100));
+    var currentLeads = Math.max(1, Math.round(clicks * (cvr / 100)));
+    var oldCpa = spend / currentLeads;
     /* Typical wasted spend from unfiltered search terms + broken conversion signals ~28% */
     var wastedSpend = Math.round(spend * 0.28);
-    /* Projected leads after Tracking-First rebuild + negative keyword shield (+38% efficiency) */
+    var annualSaved = wastedSpend * 12;
+    /* Projected leads after Tracking-First rebuild + negative keyword shield (+42% efficiency) */
     var projectedLeads = Math.max(currentLeads + 4, Math.round(currentLeads * 1.42));
     var extraLeads = projectedLeads - currentLeads;
     var newCpa = projectedLeads > 0 ? (spend / projectedLeads) : 0;
+    var cpaDropPct = oldCpa > 0 ? Math.round(((oldCpa - newCpa) / oldCpa) * 100) : 30;
 
     var elWaste = document.getElementById("coWaste");
+    var elAnnual = document.getElementById("coAnnual");
     var elLeads = document.getElementById("coLeads");
+    var elTotalLeads = document.getElementById("coTotalLeads");
+    var elOldCpa = document.getElementById("coOldCpa");
     var elCpa = document.getElementById("coCpa");
+    var elCpaDrop = document.getElementById("coCpaDrop");
 
     if (elWaste) elWaste.textContent = "$" + wastedSpend.toLocaleString() + "/mo";
+    if (elAnnual) elAnnual.textContent = "~$" + annualSaved.toLocaleString() + "/yr recovered";
     if (elLeads) elLeads.textContent = "+" + extraLeads + " Leads/mo";
+    if (elTotalLeads) elTotalLeads.textContent = currentLeads + " → " + projectedLeads + " total leads/mo";
+    if (elOldCpa) elOldCpa.textContent = "$" + oldCpa.toFixed(2);
     if (elCpa) elCpa.textContent = "$" + newCpa.toFixed(2);
+    if (elCpaDrop) elCpaDrop.textContent = "-" + cpaDropPct + "% CPA";
 
     var calcCta = document.getElementById("calcApplyBtn");
     if (calcCta) {
@@ -520,6 +545,19 @@
         }
       };
     }
+  }
+
+  if (presetBtns.length && spendRange && cvrRange && cpcRange) {
+    presetBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        presetBtns.forEach(function (b) { b.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+        spendRange.value = btn.getAttribute("data-spend") || "5000";
+        cvrRange.value = btn.getAttribute("data-cvr") || "6";
+        cpcRange.value = btn.getAttribute("data-cpc") || "4.5";
+        updateCalculator();
+      });
+    });
   }
 
   if (spendRange && cvrRange && cpcRange) {
