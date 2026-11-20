@@ -81,16 +81,7 @@
         <span class="hero-line">More Leads, Clients &amp; Profit</span>
       </h1>
 
-      <p class="hero-sub">I fix broken <b>GA4, GTM &amp; Server-Side Tracking</b> and scale high-intent <b>Google Ads</b> — turning wasted ad spend into qualified leads, booked calls, and predictable revenue.</p>
-
-      <!-- Top Niches Strip (Clear Niche Positioning right in the Hero) -->
-      <div class="hero-niches" aria-label="Top Industries I Scale">
-        <span class="hn-label">Top Niches:</span>
-        <span class="hn-pill">🏠 Home Services &amp; Roofing</span>
-        <span class="hn-pill">⚖️ Law &amp; Immigration</span>
-        <span class="hn-pill">🏥 Medical &amp; Local Business</span>
-        <span class="hn-pill">🛒 eCommerce (Shopify / Woo)</span>
-      </div>
+      <p class="hero-sub">I fix broken <b>GA4, GTM &amp; Server-Side Tracking</b> and scale high-intent <b>Google Ads</b> — helping <b>Home Services, Law Firms, Medical Clinics &amp; eCommerce</b> brands stop wasting ad spend and generate predictable revenue.</p>
 
       <ul class="hero-checks">
         <li>Cut CPA by up to 67%</li>
@@ -381,6 +372,16 @@
     </div>
 
     <aside class="about-side">
+      <div class="about-photo-box">
+        <div class="about-photo-ring">
+          <img src="assets/fahim-circle.jpg" alt="Ferdous Wahid Fahim — Google Ads &amp; Conversion Tracking Specialist" loading="lazy">
+        </div>
+        <div class="about-photo-tag">
+          <span class="pulse"></span>
+          <span>Ferdous Wahid Fahim · Google Ads &amp; Tracking</span>
+        </div>
+      </div>
+
       <div class="stat-card">
         <div class="sc-row"><span class="sc-num"><span class="counter" data-target="100">0</span>+</span><span class="sc-lbl">Clients supported</span></div>
         <div class="sc-row"><span class="sc-num"><span class="counter" data-target="282">0</span></span><span class="sc-lbl">Leads in 30 days</span></div>
@@ -604,44 +605,84 @@
     <div class="sec-head center">
       <span class="sec-eyebrow">Interactive Growth &amp; Tracking Diagnostic</span>
       <h2 class="sec-title">Calculate Your Monthly <span class="script">Ad Spend Leak</span></h2>
-      <p class="sec-sub">Drag the sliders below to see how much budget is typically lost to broken conversion signals &amp; unfiltered search terms — and what happens when we fix both.</p>
+      <p class="sec-sub">Pick your business type or drag the sliders to see how much budget leaks to broken conversion signals &amp; junk clicks — and your projected growth after a rebuild.</p>
     </div>
 
     <div class="calc-box">
       <div class="calc-controls">
+        <!-- Quick Niche Presets -->
+        <div class="calc-presets">
+          <span class="cp-lbl">Quick Niche Preset:</span>
+          <div class="cp-btns">
+            <button type="button" class="cp-btn is-active" data-spend="5000" data-cvr="6" data-cpc="4.5">🏠 Home Services</button>
+            <button type="button" class="cp-btn" data-spend="8000" data-cvr="5" data-cpc="8.5">⚖️ Law / Medical</button>
+            <button type="button" class="cp-btn" data-spend="10000" data-cvr="3.5" data-cpc="1.8">🛒 eCommerce</button>
+            <button type="button" class="cp-btn" data-spend="3500" data-cvr="7.5" data-cpc="3.5">📍 Local Business</button>
+          </div>
+        </div>
+
         <div class="calc-group">
-          <label for="calcSpend"><span>Monthly Ad Spend</span><b id="calcSpendVal">$5,000</b></label>
+          <label for="calcSpend">
+            <span>Monthly Ad Spend</span>
+            <b id="calcSpendVal" class="calc-badge-val">$5,000</b>
+          </label>
           <input type="range" id="calcSpend" class="calc-range" min="1000" max="35000" step="500" value="5000">
           <div class="calc-scale"><span>$1,000/mo</span><span>$15,000/mo</span><span>$35,000/mo</span></div>
         </div>
 
         <div class="calc-group">
-          <label for="calcCvr"><span>Current Landing Page Conversion Rate</span><b id="calcCvrVal">6.0%</b></label>
+          <label for="calcCvr">
+            <span>Current Landing Page Conversion Rate</span>
+            <b id="calcCvrVal" class="calc-badge-val">6.0%</b>
+          </label>
           <input type="range" id="calcCvr" class="calc-range" min="1" max="25" step="0.5" value="6">
           <div class="calc-scale"><span>1%</span><span>12%</span><span>25%</span></div>
         </div>
 
         <div class="calc-group">
-          <label for="calcCpc"><span>Average Cost Per Click (CPC)</span><b id="calcCpcVal">$4.50</b></label>
+          <label for="calcCpc">
+            <span>Average Cost Per Click (CPC)</span>
+            <b id="calcCpcVal" class="calc-badge-val">$4.50</b>
+          </label>
           <input type="range" id="calcCpc" class="calc-range" min="0.5" max="25" step="0.5" value="4.5">
           <div class="calc-scale"><span>$0.50</span><span>$10.00</span><span>$25.00</span></div>
         </div>
       </div>
 
       <div class="calc-output">
-        <div class="co-head">● LIVE PERFORMANCE PROJECTION</div>
+        <div class="co-head-row">
+          <span class="co-head">● LIVE PERFORMANCE PROJECTION</span>
+          <span class="co-pill">+42% Signal Efficiency</span>
+        </div>
+
         <div class="co-grid">
           <div class="co-card leak">
-            <span class="co-lbl">Est. Wasted Spend (28% Signal/Search Leak)</span>
+            <span class="co-lbl">Est. Monthly Wasted Spend (28% Signal Leak)</span>
             <span class="co-val" id="coWaste">$1,400/mo</span>
+            <small class="co-sub" id="coAnnual">~$16,800/yr recovered</small>
           </div>
           <div class="co-card gain">
-            <span class="co-lbl">Projected Extra Leads After Rebuild</span>
+            <span class="co-lbl">Projected Extra Leads / Sales</span>
             <span class="co-val" id="coLeads">+28 Leads/mo</span>
+            <small class="co-sub" id="coTotalLeads">67 → 95 total leads/mo</small>
           </div>
         </div>
-        <p class="co-note">Projected Optimized CPA: <b style="color:#4ADE80" id="coCpa">$52.91</b> — achieved by eliminating non-buyer search terms and feeding verified GA4/GTM + Server-Side conversions to Smart Bidding.</p>
-        <a href="#contact" id="calcApplyBtn" class="btn btn-primary">Plug This Into My Free Audit Form →</a>
+
+        <div class="co-cpa-compare">
+          <div class="cpa-col">
+            <span>Current Est. CPA</span>
+            <b id="coOldCpa">$74.63</b>
+          </div>
+          <span class="cpa-arrow" aria-hidden="true">→</span>
+          <div class="cpa-col is-new">
+            <span>Projected Optimized CPA</span>
+            <b id="coCpa">$52.63</b>
+          </div>
+          <div class="cpa-save-tag" id="coCpaDrop">-30% CPA</div>
+        </div>
+
+        <p class="co-note">Achieved by blocking non-buyer search terms and feeding 100% verified GA4, GTM &amp; Stape Server-Side conversions to Google Smart Bidding.</p>
+        <a href="#contact" id="calcApplyBtn" class="btn btn-primary">Claim Free Audit to Fix This Leak →</a>
       </div>
     </div>
   </div>
