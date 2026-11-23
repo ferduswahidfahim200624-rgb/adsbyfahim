@@ -817,12 +817,12 @@
   var btnSaveGtm = document.getElementById("btnSaveGtm");
   var gtmToast = document.getElementById("gtmToast");
   if (gtmInput) {
-    gtmInput.value = localStorage.getItem("fahim_gtm_id") || "GTM-XXXXXXX";
+    gtmInput.value = localStorage.getItem("fahim_gtm_id") || "GTM-PQW75H6M";
   }
   if (btnSaveGtm && gtmInput) {
     btnSaveGtm.addEventListener("click", function () {
       var val = (gtmInput.value || "").trim().toUpperCase();
-      if (!val) val = "GTM-XXXXXXX";
+      if (!val) val = "GTM-PQW75H6M";
       localStorage.setItem("fahim_gtm_id", val);
       if (gtmToast) {
         gtmToast.textContent = "✅ GTM Container ID (" + val + ") saved! All pages will load this container.";
