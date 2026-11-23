@@ -839,7 +839,38 @@
   var auditForm = document.getElementById("auditForm");
   if (auditForm) {
     auditForm.addEventListener("submit", function () {
-      pushTrackingEvent("generate_lead", { method: "lead_form", value: "audit_request" });
+      pushTrackingEvent("generate_lead", {
+        method: "lead_form",
+        value: "audit_request",
+        service: ((document.getElementById("afService") || {}).value || "Google Ads + Conversion Tracking Audit"),
+        budget: ((document.getElementById("afBudget") || {}).value || "$3K – $10K / mo")
+      });
+    });
+  }
+
+  /* Track WhatsApp & Email Lead Clicks in GTM dataLayer */
+  document.querySelectorAll('a[href*="wa.me"], #afWaBtn').forEach(function (el) {
+    el.addEventListener("click", function () {
+      pushTrackingEvent("whatsapp_click", {
+        method: "whatsapp_direct",
+        page: window.location.pathname.split("/").pop() || "index.html"
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
+    el.addEventListener("click", function () {
+      pushTrackingEvent("email_click", {
+        method: "email_direct",
+        page: window.location.pathname.split("/").pop() || "index.html"
+      });
+    });
+  });
+
+  var soundBtnTrack = document.getElementById("wpSoundBtn");
+  if (soundBtnTrack) {
+    soundBtnTrack.addEventListener("click", function () {
+      pushTrackingEvent("video_voiceover_toggled", { component: "ae_walkthrough_player" });
     });
   }
 
