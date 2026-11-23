@@ -836,14 +836,186 @@
     });
   }
 
+  /* ═══════════════════════════════════════════════════════════════════════
+     PRODUCTION GA4 ECOMMERCE + GOOGLE ADS CONVERSION & ENHANCED CONVERSIONS
+     - GTM Container ID: GTM-PQW75H6M
+     - GA4 Property ID: 530520736 | Measurement ID: G-RJ1L8WS4SL
+     - Events: view_item_list, view_item, add_to_cart, begin_checkout, purchase, generate_lead
+     - Enhanced Conversions user_data: email, phone_number, address (first_name, last_name, country, postal_code, street, city, region)
+     ═══════════════════════════════════════════════════════════════════════ */
+  function parseServiceItem(serviceName, budgetLabel) {
+    var val = 497;
+    if (budgetLabel && budgetLabel.indexOf("$10K") !== -1) val = 1497;
+    else if (budgetLabel && budgetLabel.indexOf("$3K") !== -1) val = 997;
+    else if (budgetLabel && budgetLabel.indexOf("$1K") !== -1) val = 697;
+    var itemId = (serviceName || "google-ads-tracking-service")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "_")
+      .replace(/^_|_$/g, "");
+    return {
+      item_id: itemId || "ppc_tracking_package",
+      item_name: serviceName || "Google Ads & Conversion Tracking Package",
+      item_brand: "AdsByFahim",
+      item_category: "Google Ads & Conversion Tracking",
+      item_variant: budgetLabel || "Standard",
+      price: val,
+      quantity: 1
+    };
+  }
+
+  function normalizePhoneE164(rawPhone) {
+    if (!rawPhone) return "";
+    var digits = String(rawPhone).replace(/[^\d+]/g, "");
+    if (digits && digits.charAt(0) !== "+") {
+      if (digits.indexOf("880") === 0) digits = "+" + digits;
+      else if (digits.indexOf("01") === 0 && digits.length === 11) digits = "+88" + digits;
+      else if (digits.length === 10) digits = "+1" + digits;
+      else digits = "+" + digits;
+    }
+    return digits;
+  }
+
+  function buildEnhancedConversionsUserData(rawName, rawEmail, rawPhone, extraAddress) {
+    var parts = (rawName || "").trim().split(/\s+/);
+    var firstName = parts[0] || "";
+    var lastName = parts.length > 1 ? parts.slice(1).join(" ") : "";
+    var addr = extraAddress || {};
+    return {
+      email: (rawEmail || "").trim().toLowerCase(),
+      phone_number: normalizePhoneE164(rawPhone),
+      address: {
+        first_name: firstName.toLowerCase(),
+        last_name: lastName.toLowerCase(),
+        street: (addr.street || "").trim().toLowerCase(),
+        city: (addr.city || "").trim().toLowerCase(),
+        region: (addr.region || "").trim().toLowerCase(),
+        postal_code: (addr.postal_code || "").trim(),
+        country: (addr.country || "US").trim().toUpperCase()
+      }
+    };
+  }
+
+  /* 1. Fire GA4 view_item_list & view_item on services / packages */
+  var serviceCards = document.querySelectorAll(".pkg-card, .svc");
+  if (serviceCards.length > 0) {
+    var listItems = [];
+    serviceCards.forEach(function (card, idx) {
+      var titleEl = card.querySelector("h3");
+      var badgeEl = card.querySelector(".pkg-badge, .svc-tag");
+      var title = titleEl ? titleEl.textContent.trim() : ("Service Package " + (idx + 1));
+      var variant = badgeEl ? badgeEl.textContent.trim() : "Standard";
+      var itemObj = parseServiceItem(title, variant);
+      itemObj.index = idx + 1;
+      listItems.push(itemObj);
+    });
+    window.dataLayer.push({ ecommerce: null });
+    pushTrackingEvent("view_item_list", {
+      ga4_measurement_id: "G-RJ1L8WS4SL",
+      ga4_property_id: "530520736",
+      ecommerce: {
+        item_list_id: "services_packages",
+        item_list_name: "AdsByFahim Services & Packages",
+        currency: "USD",
+        items: listItems
+      }
+    });
+  }
+
+  /* 2. Fire GA4 & Google Ads add_to_cart when a user clicks any service/package CTA */
+  document.querySelectorAll(".pkg-card a.btn, .svc a.svc-link, [data-service]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var card = btn.closest(".pkg-card, .svc");
+      var titleEl = card ? card.querySelector("h3") : null;
+      var svcName = btn.getAttribute("data-service") || (titleEl ? titleEl.textContent.trim() : "Google Ads & Tracking Package");
+      var budgetVal = ((document.getElementById("afBudget") || {}).value || "$3K – $10K / mo");
+      var item = parseServiceItem(svcName, budgetVal);
+
+      window.dataLayer.push({ ecommerce: null });
+      pushTrackingEvent("add_to_cart", {
+        ga4_measurement_id: "G-RJ1L8WS4SL",
+        ecommerce: {
+          currency: "USD",
+          value: item.price,
+          items: [item]
+        }
+      });
+    });
+  });
+
+  /* 3. Fire GA4 & Google Ads begin_checkout when the user starts filling out the Audit / Order Form */
+  var checkoutStarted = false;
   var auditForm = document.getElementById("auditForm");
   if (auditForm) {
+    auditForm.addEventListener("focusin", function () {
+      if (checkoutStarted) return;
+      checkoutStarted = true;
+      var svcName = ((document.getElementById("afService") || {}).value || "Google Ads + Conversion Tracking Audit");
+      var budgetVal = ((document.getElementById("afBudget") || {}).value || "$3K – $10K / mo");
+      var item = parseServiceItem(svcName, budgetVal);
+
+      window.dataLayer.push({ ecommerce: null });
+      pushTrackingEvent("begin_checkout", {
+        ga4_measurement_id: "G-RJ1L8WS4SL",
+        ecommerce: {
+          currency: "USD",
+          value: item.price,
+          items: [item]
+        }
+      });
+    });
+
+    /* 4. Fire GA4 & Google Ads purchase + Enhanced Conversions user_data + generate_lead on Form Submit */
     auditForm.addEventListener("submit", function () {
+      var rawName = ((document.getElementById("afName") || {}).value || "").trim();
+      var rawEmail = ((document.getElementById("afEmail") || {}).value || "").trim();
+      var rawPhone = ((document.getElementById("afPhone") || {}).value || "").trim();
+      var svcName = ((document.getElementById("afService") || {}).value || "Google Ads + Conversion Tracking Audit");
+      var budgetVal = ((document.getElementById("afBudget") || {}).value || "$3K – $10K / mo");
+      var item = parseServiceItem(svcName, budgetVal);
+      var txId = "TXN-" + Date.now() + "-" + Math.floor(Math.random() * 900 + 100);
+      var userData = buildEnhancedConversionsUserData(rawName, rawEmail, rawPhone);
+
+      /* Expose global user_data object for GTM Enhanced Conversions Automatic/Manual Variable */
+      window.enhanced_conversion_data = {
+        email: userData.email,
+        phone_number: userData.phone_number,
+        first_name: userData.address.first_name,
+        last_name: userData.address.last_name,
+        home_address: {
+          street: userData.address.street,
+          city: userData.address.city,
+          region: userData.address.region,
+          postal_code: userData.address.postal_code,
+          country: userData.address.country
+        }
+      };
+
+      /* Push GA4 & Google Ads Purchase Event with Enhanced Conversions user_data */
+      window.dataLayer.push({ ecommerce: null });
+      pushTrackingEvent("purchase", {
+        ga4_measurement_id: "G-RJ1L8WS4SL",
+        ga4_property_id: "530520736",
+        user_data: userData,
+        ecommerce: {
+          transaction_id: txId,
+          affiliation: "AdsByFahim Online Store",
+          value: item.price,
+          tax: 0,
+          shipping: 0,
+          currency: "USD",
+          items: [item]
+        }
+      });
+
+      /* Also push generate_lead for lead-gen reporting */
       pushTrackingEvent("generate_lead", {
         method: "lead_form",
-        value: "audit_request",
-        service: ((document.getElementById("afService") || {}).value || "Google Ads + Conversion Tracking Audit"),
-        budget: ((document.getElementById("afBudget") || {}).value || "$3K – $10K / mo")
+        transaction_id: txId,
+        value: item.price,
+        currency: "USD",
+        service: svcName,
+        budget: budgetVal,
+        user_data: userData
       });
     });
   }
