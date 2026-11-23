@@ -192,6 +192,17 @@ em { font-style: normal; }
   color: #fff; font-family: var(--display); font-weight: 800; font-size: 1.05rem;
   box-shadow: var(--shadow-blue); flex: none;
 }
+.brand-logo {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-blue);
+  flex: none; display: block;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.brand:hover .brand-logo {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 12px 24px -8px rgba(31,116,240,.55);
+}
 .brand-text { font-family: var(--display); font-size: .98rem; font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
 .brand-text em { font-weight: 800; color: var(--blue); }
 
@@ -1133,6 +1144,45 @@ section { padding: clamp(54px, 7.5vw, 90px) 0; }
 }
 .svc:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--blue-tint); }
 .svc-accent { background: linear-gradient(160deg, var(--blue-soft) 0%, #fff 55%); border-color: #BFDBFE; }
+.svc-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #0B1120;
+  box-shadow: 0 12px 26px -14px rgba(15, 23, 42, 0.25);
+}
+.svc-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+.svc:hover .svc-banner img {
+  transform: scale(1.03);
+}
+.svc-has-banner {
+  padding: 20px 24px 26px;
+}
+.svc-has-banner .svc-num {
+  position: static;
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--blue-dark);
+  background: var(--blue-soft);
+  border: 1px solid #BFDBFE;
+  padding: 4px 11px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
 .svc-num {
   position: absolute; top: 26px; right: 28px;
   font-family: var(--display); font-size: 2.2rem; font-weight: 800;
