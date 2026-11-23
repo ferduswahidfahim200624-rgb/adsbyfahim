@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgEco" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F7FF"/>
+      <stop offset="55%" stop-color="#E0EEFF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="navyCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E3A5F"/>
+    </linearGradient>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1F74F0"/>
+      <stop offset="100%" stop-color="#0B4BD8"/>
+    </linearGradient>
+    <linearGradient id="greenUp" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#4ADE80"/>
+    </linearGradient>
+    <linearGradient id="chartFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="cardSh" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+    <filter id="softSh" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#1F74F0" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" rx="22" fill="url(#bgEco)"/>
+  <!-- Subtle Tech Dot Grid -->
+  <g fill="#1F74F0" opacity="0.12">
+    <circle cx="40" cy="40" r="2"/><circle cx="70" cy="40" r="2"/><circle cx="100" cy="40" r="2"/><circle cx="130" cy="40" r="2"/>
+    <circle cx="40" cy="70" r="2"/><circle cx="70" cy="70" r="2"/><circle cx="100" cy="70" r="2"/><circle cx="130" cy="70" r="2"/>
+    <circle cx="660" cy="360" r="2"/><circle cx="690" cy="360" r="2"/><circle cx="720" cy="360" r="2"/><circle cx="750" cy="360" r="2"/>
+    <circle cx="660" cy="390" r="2"/><circle cx="690" cy="390" r="2"/><circle cx="720" cy="390" r="2"/><circle cx="750" cy="390" r="2"/>
+  </g>
+  <!-- Ambient Glows -->
+  <circle cx="215" cy="240" r="145" fill="#1F74F0" opacity="0.08"/>
+  <circle cx="600" cy="180" r="150" fill="#22C55E" opacity="0.09"/>
+
+  <!-- Top Left Official Google Ads Pill Badge -->
+  <g transform="translate(36, 28)" filter="url(#softSh)">
+    <rect width="236" height="44" rx="22" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+    <!-- Official Google Ads Triangle Icon -->
+    <g transform="translate(14, 10) scale(0.95)">
+      <path fill="#FBBC04" d="M3.3 18.2 10.6 5.5c.7-1.2 2.2-1.6 3.4-.9 1.2.7 1.6 2.2.9 3.4L7.6 20.7c-.7 1.2-2.2 1.6-3.4.9-1.2-.7-1.6-2.2-.9-3.4z"/>
+      <path fill="#4285F4" d="M20.7 18.2 13.4 5.5c-.7-1.2-2.2-1.6-3.4-.9l4.3 7.5 3.1 5.3c.7 1.2 2.2 1.6 3.4.9 1.1-.7 1.6-2.2.9-2.1z"/>
+      <circle fill="#34A853" cx="5.5" cy="19.5" r="2.6"/>
+    </g>
+    <text x="46" y="27" font-family="Sora, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" fill="#0F172A">Google Ads · eCommerce</text>
+  </g>
+
+  <!-- LEFT: Creative Modern eCommerce Online Shop Storefront -->
+  <g transform="translate(52, 114)" filter="url(#cardSh)">
+    <!-- Storefront Main Body -->
+    <rect x="16" y="54" width="262" height="214" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <!-- Striped Modern Awning Canopy -->
+    <path d="M6 56 L22 14 C25 7 31 4 38 4 H256 C263 4 269 7 272 14 L288 56 Z" fill="url(#roofGrad)"/>
+    <!-- Awning Stripes & Scallops -->
+    <path d="M52 4 H86 L82 56 H44 Z" fill="#FFFFFF" opacity="0.22"/>
+    <path d="M126 4 H166 L168 56 H124 Z" fill="#FFFFFF" opacity="0.22"/>
+    <path d="M206 4 H240 L248 56 H210 Z" fill="#FFFFFF" opacity="0.22"/>
+    <!-- Awning Scallop Bottom -->
+    <g fill="#0B4BD8">
+      <path d="M6 56 Q26 74 46 56 Z"/><path d="M46 56 Q66 74 86 56 Z"/><path d="M86 56 Q106 74 126 56 Z"/>
+      <path d="M126 56 Q146 74 166 56 Z"/><path d="M166 56 Q186 74 206 56 Z"/><path d="M206 56 Q226 74 246 56 Z"/><path d="M246 56 Q267 74 288 56 Z"/>
+    </g>
+    <!-- Store Signboard -->
+    <rect x="64" y="20" width="166" height="24" rx="12" fill="#0F172A"/>
+    <circle cx="80" cy="32" r="4.5" fill="#4ADE80"/>
+    <text x="92" y="36" font-family="Sora, Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">YOUR ONLINE STORE</text>
+
+    <!-- Store Display Windows (3 Product Cards inside Shop) -->
+    <!-- Product 1: Sneaker Box -->
+    <rect x="32" y="84" width="70" height="86" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="44" y="96" width="46" height="36" rx="8" fill="#DBEAFE"/>
+    <path d="M52 120 Q60 110 74 114 L82 122 H52 Z" fill="#1F74F0"/>
+    <rect x="42" y="140" width="50" height="6" rx="3" fill="#CBD5E1"/>
+    <text x="44" y="160" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800" fill="#0F172A">$129</text>
+    <circle cx="88" cy="156" r="7" fill="#16A34A"/>
+    <path d="M85 156 L87 158 L91 154" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Product 2: Watch / Gadget -->
+    <rect x="112" y="84" width="70" height="86" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="124" y="96" width="46" height="36" rx="8" fill="#FEF3C7"/>
+    <rect x="139" y="103" width="16" height="22" rx="4" fill="#0F172A"/>
+    <rect x="142" y="107" width="10" height="14" rx="2" fill="#38BDF8"/>
+    <rect x="122" y="140" width="50" height="6" rx="3" fill="#CBD5E1"/>
+    <text x="124" y="160" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800" fill="#0F172A">$199</text>
+    <circle cx="168" cy="156" r="7" fill="#16A34A"/>
+    <path d="M165 156 L167 158 L171 154" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Product 3: Shopping Bag / Fashion -->
+    <rect x="192" y="84" width="70" height="86" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="204" y="96" width="46" height="36" rx="8" fill="#DCFCE7"/>
+    <path d="M216 108 H238 L240 126 H214 Z" fill="#16A34A"/>
+    <path d="M221 108 C221 101 233 101 233 108" fill="none" stroke="#15803D" stroke-width="2.2"/>
+    <rect x="202" y="140" width="50" height="6" rx="3" fill="#CBD5E1"/>
+    <text x="204" y="160" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800" fill="#0F172A">$89</text>
+    <circle cx="248" cy="156" r="7" fill="#16A34A"/>
+    <path d="M245 156 L247 158 L251 154" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Store Checkout Bar at Bottom -->
+    <rect x="32" y="184" width="230" height="66" rx="14" fill="#F1F5F9" stroke="#E2E8F0"/>
+    <!-- Platform Pills: Shopify + WooCommerce + PMax -->
+    <rect x="44" y="196" width="66" height="22" rx="11" fill="#DCFCE7"/>
+    <text x="55" y="211" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#15803D">Shopify</text>
+    <rect x="116" y="196" width="66" height="22" rx="11" fill="#EDE9FE"/>
+    <text x="128" y="211" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#6D28D9">WooCom</text>
+    <rect x="188" y="196" width="62" height="22" rx="11" fill="#DBEAFE"/>
+    <text x="200" y="211" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#1D4ED8">PMax</text>
+    <text x="44" y="238" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="#475569">● LIVE SHOPPING FEED CONNECTED</text>
+  </g>
+
+  <!-- Glowing Signal Flow Beam connecting Storefront to Google Ads Growth Card -->
+  <path d="M332 252 C368 252, 372 215, 412 215" fill="none" stroke="#1F74F0" stroke-width="3.5" stroke-dasharray="7 6"/>
+  <circle cx="372" cy="233" r="14" fill="#1F74F0" filter="url(#softSh)"/>
+  <path d="M367 233 H377 M373 229 L377 233 L373 237" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- RIGHT: High-ROAS Google Ads Growth Dashboard Panel -->
+  <g transform="translate(414, 58)" filter="url(#cardSh)">
+    <rect width="346" height="330" rx="22" fill="url(#navyCard)" stroke="rgba(56,189,248,0.35)" stroke-width="1.5"/>
+    <!-- Header Bar -->
+    <circle cx="26" cy="26" r="5" fill="#F87171"/>
+    <circle cx="42" cy="26" r="5" fill="#FBBF24"/>
+    <circle cx="58" cy="26" r="5" fill="#4ADE80"/>
+    <text x="80" y="30" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#93C5FD">GOOGLE ADS PROFIT ENGINE</text>
+
+    <!-- 3 KPI Mini Boxes -->
+    <g transform="translate(20, 50)">
+      <rect width="96" height="66" rx="12" fill="rgba(66,133,244,0.18)" stroke="rgba(96,165,250,0.4)"/>
+      <text x="12" y="22" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#93C5FD">ROAS LIFT</text>
+      <text x="12" y="45" font-family="Sora, Arial, sans-serif" font-size="19" font-weight="800" fill="#FFFFFF">4.8x</text>
+      <text x="12" y="58" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="700" fill="#4ADE80">▲ Scaling</text>
+    </g>
+    <g transform="translate(125, 50)">
+      <rect width="96" height="66" rx="12" fill="rgba(22,163,74,0.18)" stroke="rgba(74,222,128,0.45)"/>
+      <text x="12" y="22" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#86EFAC">CPA DROP</text>
+      <text x="12" y="45" font-family="Sora, Arial, sans-serif" font-size="19" font-weight="800" fill="#4ADE80">-67%</text>
+      <text x="12" y="58" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="700" fill="#E2E8F0">Less Waste</text>
+    </g>
+    <g transform="translate(230, 50)">
+      <rect width="96" height="66" rx="12" fill="rgba(251,188,4,0.16)" stroke="rgba(251,191,36,0.42)"/>
+      <text x="12" y="22" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#FDE68A">ORDERS</text>
+      <text x="12" y="45" font-family="Sora, Arial, sans-serif" font-size="19" font-weight="800" fill="#FFFFFF">1.2K+</text>
+      <text x="12" y="58" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="700" fill="#4ADE80">▲ Verified</text>
+    </g>
+
+    <!-- Rising Growth Area Chart -->
+    <g transform="translate(20, 134)">
+      <rect width="306" height="122" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
+      <!-- Grid lines -->
+      <line x1="16" y1="34" x2="290" y2="34" stroke="rgba(255,255,255,0.07)"/>
+      <line x1="16" y1="64" x2="290" y2="64" stroke="rgba(255,255,255,0.07)"/>
+      <line x1="16" y1="94" x2="290" y2="94" stroke="rgba(255,255,255,0.07)"/>
+      <!-- Revenue Area + Line -->
+      <path d="M18 102 L64 92 L110 86 L158 64 L206 52 L248 34 L288 18 L288 110 L18 110 Z" fill="url(#chartFill)"/>
+      <path d="M18 102 L64 92 L110 86 L158 64 L206 52 L248 34 L288 18" fill="none" stroke="url(#greenUp)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Data Nodes -->
+      <circle cx="158" cy="64" r="4.5" fill="#38BDF8" stroke="#0F172A" stroke-width="2"/>
+      <circle cx="248" cy="34" r="4.5" fill="#4ADE80" stroke="#0F172A" stroke-width="2"/>
+      <circle cx="288" cy="18" r="6" fill="#4ADE80" stroke="#FFFFFF" stroke-width="2.5"/>
+      <!-- Floating Growth Tag -->
+      <rect x="172" y="12" width="96" height="24" rx="12" fill="#16A34A"/>
+      <text x="184" y="28" font-family="Sora, Arial, sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF">▲ +196% Sales</text>
+    </g>
+
+    <!-- Bottom Feature Pills -->
+    <g transform="translate(20, 272)">
+      <rect width="306" height="38" rx="12" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.28)"/>
+      <text x="16" y="23" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#E2E8F0">✓ Search  ·  ✓ Shopping  ·  ✓ PMax  ·  ✓ Profitable Scale</text>
+    </g>
+  </g>
+
+  <!-- Floating Order Notification Pop-up -->
+  <g transform="translate(230, 356)" filter="url(#softSh)">
+    <rect width="194" height="54" rx="14" fill="#FFFFFF" stroke="#86EFAC" stroke-width="2"/>
+    <circle cx="27" cy="27" r="14" fill="#DCFCE7"/>
+    <text x="20" y="32" font-size="14">🛒</text>
+    <text x="48" y="23" font-family="Sora, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#0F172A">New Store Sale!</text>
+    <text x="48" y="39" font-family="Inter, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#16A34A">+$199.00 via Google Ads</text>
+  </g>
+</svg>

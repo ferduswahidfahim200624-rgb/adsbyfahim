@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgLead" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="60%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#DCFCE7"/>
+    </linearGradient>
+    <linearGradient id="btnBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#0B4BD8"/>
+    </linearGradient>
+    <filter id="lSh" x="-12%" y="-12%" width="128%" height="128%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" rx="22" fill="url(#bgLead)"/>
+  <circle cx="190" cy="180" r="140" fill="#1F74F0" opacity="0.08"/>
+  <circle cx="620" cy="270" r="150" fill="#16A34A" opacity="0.08"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(36, 28)" filter="url(#lSh)">
+    <rect width="270" height="42" rx="21" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+    <g transform="translate(14, 9) scale(0.95)">
+      <path fill="#FBBC04" d="M3.3 18.2 10.6 5.5c.7-1.2 2.2-1.6 3.4-.9 1.2.7 1.6 2.2.9 3.4L7.6 20.7c-.7 1.2-2.2 1.6-3.4.9-1.2-.7-1.6-2.2-.9-3.4z"/>
+      <path fill="#4285F4" d="M20.7 18.2 13.4 5.5c-.7-1.2-2.2-1.6-3.4-.9l4.3 7.5 3.1 5.3c.7 1.2 2.2 1.6 3.4.9 1.1-.7 1.6-2.2.9-2.1z"/>
+      <circle fill="#34A853" cx="5.5" cy="19.5" r="2.6"/>
+    </g>
+    <text x="46" y="26" font-family="Sora, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#0F172A">High-Intent Search &amp; Leads</text>
+  </g>
+
+  <!-- LEFT: Google Search Intent Mockup Card -->
+  <g transform="translate(36, 98)" filter="url(#lSh)">
+    <rect width="376" height="314" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Search Bar -->
+    <rect x="20" y="22" width="336" height="44" rx="22" fill="#F8FAFC" stroke="#93C5FD" stroke-width="2"/>
+    <circle cx="44" cy="44" r="7" fill="none" stroke="#1F74F0" stroke-width="2.4"/>
+    <line x1="49" y1="49" x2="54" y2="54" stroke="#1F74F0" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="64" y="49" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0F172A">"best local service near me"</text>
+    <rect x="278" y="31" width="66" height="26" rx="13" fill="url(#btnBlue)"/>
+    <text x="292" y="48" font-family="Inter, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">Search</text>
+
+    <!-- Sponsored #1 Ad Result Card -->
+    <g transform="translate(20, 82)">
+      <rect width="336" height="122" rx="14" fill="#F0F7FF" stroke="#3B82F6" stroke-width="2"/>
+      <rect x="14" y="14" width="68" height="20" rx="6" fill="#0F172A"/>
+      <text x="22" y="28" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="700" fill="#4ADE80">TOP #1 AD</text>
+      <text x="92" y="28" font-family="Inter, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#64748B">yourbusiness.com · Verified</text>
+      <text x="14" y="55" font-family="Sora, Arial, sans-serif" font-size="14" font-weight="800" fill="#1D4ED8">Book a Free Quote Today — Fast Service</text>
+      <text x="14" y="75" font-family="Inter, Arial, sans-serif" font-size="11" fill="#475569">Licensed experts ready to help. Transparent pricing &amp;</text>
+      <text x="14" y="90" font-family="Inter, Arial, sans-serif" font-size="11" fill="#475569">same-day response. Call or book online now.</text>
+      <!-- Call & Sitelink Extensions -->
+      <rect x="14" y="98" width="96" height="18" rx="9" fill="#DCFCE7"/>
+      <text x="24" y="110" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#15803D">📞 Call Now</text>
+      <rect x="118" y="98" width="106" height="18" rx="9" fill="#DBEAFE"/>
+      <text x="128" y="110" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#1D4ED8">📅 Book Online</text>
+    </g>
+
+    <!-- Negative Keyword Shield Strip -->
+    <g transform="translate(20, 220)">
+      <rect width="336" height="74" rx="14" fill="#0F172A"/>
+      <text x="16" y="25" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="#38BDF8">🛡️ NEGATIVE KEYWORD SHIELD ACTIVE</text>
+      <g transform="translate(16, 37)">
+        <rect width="74" height="24" rx="12" fill="rgba(239,68,68,0.2)" stroke="#F87171"/>
+        <text x="12" y="16" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#FCA5A5">✕ "free"</text>
+        <rect x="82" width="76" height="24" rx="12" fill="rgba(239,68,68,0.2)" stroke="#F87171"/>
+        <text x="95" y="16" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#FCA5A5">✕ "jobs"</text>
+        <rect x="166" width="66" height="24" rx="12" fill="rgba(239,68,68,0.2)" stroke="#F87171"/>
+        <text x="178" y="16" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#FCA5A5">✕ "DIY"</text>
+        <rect x="240" width="66" height="24" rx="12" fill="rgba(74,222,128,0.2)" stroke="#4ADE80"/>
+        <text x="249" y="16" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#4ADE80">✓ Buyers</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT: Incoming Qualified Calls & Booked Appointments Stack -->
+  <g transform="translate(436, 98)" filter="url(#lSh)">
+    <!-- Card 1: Verified Phone Call -->
+    <rect width="328" height="92" rx="18" fill="#FFFFFF" stroke="#86EFAC" stroke-width="2"/>
+    <circle cx="44" cy="46" r="24" fill="#DCFCE7"/>
+    <text x="33" y="54" font-size="22">📞</text>
+    <text x="82" y="34" font-family="Sora, Arial, sans-serif" font-size="14" font-weight="800" fill="#0F172A">203 Qualified Phone Calls</text>
+    <text x="82" y="53" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#475569">Tracked via CallRail DNI to exact keyword</text>
+    <text x="82" y="72" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#16A34A">● HOME SERVICES · 30-DAY VERIFIED</text>
+
+    <!-- Card 2: Booked Consultation Form -->
+    <g transform="translate(0, 110)">
+      <rect width="328" height="92" rx="18" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2"/>
+      <circle cx="44" cy="46" r="24" fill="#DBEAFE"/>
+      <text x="33" y="54" font-size="22">📅</text>
+      <text x="82" y="34" font-family="Sora, Arial, sans-serif" font-size="14" font-weight="800" fill="#0F172A">20.42% Peak Conv. Rate</text>
+      <text x="82" y="53" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#475569">303 high-intent bookings in 7-day sprint</text>
+      <text x="82" y="72" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#1F74F0">● LAW · ROOFING · CLINICS · LOCAL</text>
+    </g>
+
+    <!-- Card 3: CPA Drop Summary Banner -->
+    <g transform="translate(0, 220)">
+      <rect width="328" height="94" rx="18" fill="#0F172A" stroke="rgba(74,222,128,0.45)" stroke-width="1.5"/>
+      <text x="22" y="32" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#93C5FD">VERIFIED CPA REDUCTION</text>
+      <text x="22" y="68" font-family="Sora, Arial, sans-serif" font-size="26" font-weight="800" fill="#4ADE80">-67% CPA</text>
+      <text x="172" y="52" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#FCA5A5" text-decoration="line-through">$83.88 / lead</text>
+      <text x="172" y="71" font-family="Sora, Arial, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">→ $27.87 / lead</text>
+    </g>
+  </g>
+</svg>

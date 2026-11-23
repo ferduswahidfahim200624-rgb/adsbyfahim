@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="abfBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="52%" stop-color="#1F74F0"/>
+      <stop offset="100%" stop-color="#0B3B9E"/>
+    </linearGradient>
+    <linearGradient id="abfArrow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#4ADE80"/>
+    </linearGradient>
+    <filter id="abfShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#07182F" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <!-- Rounded App Icon Container -->
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#abfBg)"/>
+  <!-- Subtle inner top specular highlight -->
+  <rect x="6" y="6" width="116" height="116" rx="28" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+  <!-- Geometric Bold "F" Monogram -->
+  <path d="M35 30 H88 C91 30 93 32 93 35 V44 C93 47 91 49 88 49 H55 V58 H78 C81 58 83 60 83 63 V71 C83 74 81 76 78 76 H55 V95 C55 98 53 100 50 100 H38 C35 100 33 98 33 95 V35 C33 32 34 30 35 30 Z" fill="#FFFFFF" filter="url(#abfShadow)"/>
+  <!-- Upward Conversion Growth Arrow Sparkle on bottom-right -->
+  <path d="M68 96 L86 78 L86 87 C86 89 88 91 90 91 C92 91 94 89 94 87 V68 C94 65 92 63 89 63 H70 C68 63 66 65 66 67 C66 69 68 71 70 71 H79 L62 88 C60 90 60 93 62 95 C64 97 66 98 68 96 Z" fill="url(#abfArrow)"/>
+  <!-- Emerald Live Conversion Signal Dot -->
+  <circle cx="96" cy="34" r="9" fill="#4ADE80" stroke="#0B3B9E" stroke-width="3.5"/>
+</svg>
