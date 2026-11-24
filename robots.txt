@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
 Disallow: /admin.html
 
 Sitemap: https://adsbyfahim.pages.dev/sitemap.xml
+Sitemap: https://adsbyfahim.pages.dev/sitemap-main.xml
