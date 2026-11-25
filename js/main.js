@@ -1485,11 +1485,12 @@
             '<span class="post-tag">' + (post.category || "Google Ads & Tracking") + '</span>' +
             '<span>' + (post.readTime || "5 Min Read") + ' · ' + (post.publishedAt || "2026") + '</span>' +
           '</div>' +
-          '<h3>' + post.title + '</h3>' +
+          '<h3><a href="/insights/' + post.slug + '" style="color:inherit;text-decoration:none;">' + post.title + '</a></h3>' +
           '<p>' + post.excerpt + '</p>' +
           (takeawaysHtml ? '<ul class="post-takeaways">' + takeawaysHtml + '</ul>' : '') +
           '<div style="margin-top:auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">' +
-            '<button type="button" class="btn btn-ghost btn-sm read-post-btn" data-slug="' + post.slug + '">Read Full Article →</button>' +
+            '<a href="/insights/' + post.slug + '" class="btn btn-ghost btn-sm">Read Full Article →</a>' +
+            '<button type="button" class="btn btn-ghost btn-sm read-post-btn" data-slug="' + post.slug + '">Quick Preview</button>' +
             '<a href="#contact" class="svc-link" style="font-size:.82rem;">Apply to my account →</a>' +
           '</div>' +
         '</article>'
