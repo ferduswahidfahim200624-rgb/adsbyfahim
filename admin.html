@@ -201,11 +201,11 @@
       <span class="brand-text">Ads by <em>Fahim</em></span>
     </a>
 
-    <button type="button" class="cms-nav-btn is-active" data-tab="tab-blog">âœï¸ Weekly Blog Studio</button>
+    <button type="button" class="cms-nav-btn is-active" data-tab="tab-blog">âœï¸ Weekly Blog Studio</button>
     <button type="button" class="cms-nav-btn" data-tab="tab-pages">📄 Niche Page Builder</button>
-    <button type="button" class="cms-nav-btn" data-tab="tab-github">â˜ï¸ GitHub + Cloudflare Sync</button>
+    <button type="button" class="cms-nav-btn" data-tab="tab-github">â˜ï¸ GitHub + Cloudflare Sync</button>
     <button type="button" class="cms-nav-btn" data-tab="tab-leads">📥 Captured Leads (<span id="leadCountBadge">0</span>)</button>
-    <button type="button" class="cms-nav-btn" data-tab="tab-seo">🔍 Security &amp; SEO/AIO</button>
+    <button type="button" class="cms-nav-btn" data-tab="tab-seo">🔍 Security &amp; SEO/AIO</button>
 
     <div class="cms-side-foot">
       <button type="button" id="btnLockAdmin" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;background:rgba(255,255,255,.06);color:#FCA5A5;border-color:rgba(252,165,165,.25);">🔒 Lock Admin Panel</button>
@@ -227,12 +227,12 @@
       </div>
     </div>
 
-    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 1: WEEKLY BLOG STUDIO â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 1: WEEKLY BLOG STUDIO â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="cms-panel is-active" id="tab-blog">
       <div class="cms-grid">
         <div>
           <form class="cms-card" id="cmsPostForm">
-            <h2 id="formHeading">âœï¸ Write / Edit Weekly Blog Post</h2>
+            <h2 id="formHeading">âœï¸ Write / Edit Weekly Blog Post</h2>
             <input type="hidden" id="cmsPostId" value="">
 
             <div class="cms-field">
@@ -319,7 +319,7 @@
       </div>
     </section>
 
-    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 2: GITHUB + CLOUDFLARE LIVE SYNC â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 2: GITHUB + CLOUDFLARE LIVE SYNC â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="cms-panel" id="tab-pages">
       <div class="cms-card">
         <h2>📄 Unified Niche Landing Page Builder (Master Header + Executive Footer Locked)</h2>
@@ -349,7 +349,7 @@
 
     <section class="cms-panel" id="tab-github">
       <div class="cms-card">
-        <h2>â˜ï¸ GitHub + Cloudflare Pages Dynamic Publishing ($0 Cost Forever)</h2>
+        <h2>â˜ï¸ GitHub + Cloudflare Pages Dynamic Publishing ($0 Cost Forever)</h2>
         <p style="font-size:.9rem;color:var(--body-txt);margin-bottom:18px;max-width:72ch;">
           Connect your GitHub repository below. Whenever you write or edit a blog post in Tab 1 and click <b>"Push Live to GitHub"</b>, this Admin Panel commits the updated <code>data/posts.json</code> directly to your GitHub repo — and <b>Cloudflare Pages</b> automatically updates your live website worldwide in ~15 seconds!
         </p>
@@ -384,7 +384,7 @@
       </div>
     </section>
 
-    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 3: CAPTURED LEADS INBOX â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 3: CAPTURED LEADS INBOX â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="cms-panel" id="tab-leads">
       <div class="cms-card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
@@ -395,7 +395,7 @@
       </div>
     </section>
 
-    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 4: SECURITY, GTM & SEO/AIO CHECKLIST â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 4: SECURITY, GTM & SEO/AIO CHECKLIST â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section class="cms-panel" id="tab-seo">
       <div class="cms-card">
         <h2>🏷️ Google Tag Manager (GTM) &amp; Stape Server-Side Container</h2>
@@ -413,7 +413,7 @@
       </div>
 
       <div class="cms-card">
-        <h2>🔍 Change Admin Passcode</h2>
+        <h2>🔍 Change Admin Passcode</h2>
         <p style="font-size:.86rem;color:var(--muted);margin-bottom:14px;">Set a new private passcode for unlocking <code>/admin.html</code> on this browser.</p>
         <div class="cms-row">
           <div class="cms-field">
@@ -496,7 +496,7 @@
     btnSavePass.addEventListener("click", function () {
       var np = (document.getElementById("newAdminPass").value || "").trim();
       if (np.length < 4) {
-        passToast.textContent = "⚠️ Passcode must be at least 4 characters.";
+        passToast.textContent = "⚠️ Passcode must be at least 4 characters.";
         passToast.classList.add("is-visible");
         return;
       }
@@ -580,7 +580,7 @@
         document.getElementById("cmsExcerpt").value = found.excerpt || "";
         document.getElementById("cmsTakeaways").value = (found.takeaways || []).join("\n");
         document.getElementById("cmsContent").value = found.content || "";
-        document.getElementById("formHeading").textContent = "âœï¸ Editing: " + found.title;
+        document.getElementById("formHeading").textContent = "âœï¸ Editing: " + found.title;
         evaluateSeoScore();
       });
     });
@@ -705,7 +705,7 @@
       postForm.reset();
       document.getElementById("cmsPostId").value = "";
       document.getElementById("cmsDate").value = new Date().toISOString().slice(0, 10);
-      document.getElementById("formHeading").textContent = "âœï¸ Write / Edit Weekly Blog Post";
+      document.getElementById("formHeading").textContent = "âœï¸ Write / Edit Weekly Blog Post";
       if (toast) toast.classList.remove("is-visible");
     });
   }
@@ -755,7 +755,7 @@
     btnPushGh.addEventListener("click", function () {
       var cfg = saveGhSettings();
       if (!cfg.owner || !cfg.repo || !cfg.token) {
-        ghStatus.textContent = "⚠️ Please enter your GitHub Username, Repository Name, and Personal Access Token first.";
+        ghStatus.textContent = "⚠️ Please enter your GitHub Username, Repository Name, and Personal Access Token first.";
         ghStatus.classList.add("is-visible");
         return;
       }
@@ -790,7 +790,7 @@
           ghStatus.textContent = "✅ Successfully pushed data/posts.json to GitHub! Cloudflare Pages will deploy it live in ~15 seconds.";
         })
         .catch(function (err) {
-          ghStatus.textContent = "⚠️ Push failed (" + err.message + "). Check your repo name & token permissions.";
+          ghStatus.textContent = "⚠️ Push failed (" + err.message + "). Check your repo name & token permissions.";
         });
     });
   }
