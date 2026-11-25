@@ -2002,6 +2002,56 @@ section { padding: clamp(54px, 7.5vw, 90px) 0; }
 .post-card.niche-article ul, .post-card.niche-article ol { margin: 0 0 18px; padding-left: 22px; color: var(--body-txt); line-height: 1.75; }
 .post-card.niche-article li { margin-bottom: 8px; }
 @media (max-width: 680px) { .post-card.niche-article { padding: 24px 20px; } }
+
+/* ═══════════════ PREMIUM NICHE LANDING PAGE LAYOUT (LAW / HOME / STAPE) ═══════════════ */
+.niche-hero { padding: 118px 0 64px; background: radial-gradient(900px 420px at 85% 15%, rgba(31,116,240,.09), transparent 65%), linear-gradient(180deg, #F8FAFF 0%, #FFFFFF 100%); border-bottom: 1px solid var(--line); }
+.niche-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+.niche-hero h1 { font-size: clamp(2.1rem, 3.8vw, 3.15rem); line-height: 1.1; margin: 14px 0 18px; letter-spacing: -0.03em; }
+.niche-hero p.nh-lead { font-size: 1.05rem; line-height: 1.68; color: var(--body-txt); margin: 0 0 22px; max-width: 56ch; }
+.nh-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.nh-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: .78rem; font-weight: 600; background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+.nh-pill.is-dark { background: #0B1221; color: #F8FAFC; border-color: #1E293B; }
+.nh-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; margin: 0 0 26px; padding: 0; list-style: none; }
+.nh-checks li { display: flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 600; color: var(--navy); }
+.nh-checks li::before { content: "✓"; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 999px; background: #DCFCE7; color: #15803D; font-size: .75rem; font-weight: 800; flex-shrink: 0; }
+.nh-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.nh-visual-wrap { position: relative; border-radius: 22px; padding: 10px; background: linear-gradient(135deg, rgba(31,116,240,.14), rgba(16,185,129,.12)); box-shadow: 0 24px 60px rgba(11,18,33,.14); }
+.nh-visual-wrap img { width: 100%; height: auto; display: block; border-radius: 16px; background: #0B1221; }
+.nh-trust-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 38px; padding-top: 28px; border-top: 1px solid var(--line); }
+.nh-stat-box { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; box-shadow: 0 4px 14px rgba(11,18,33,.03); }
+.nh-stat-box strong { display: block; font-family: var(--display); font-size: 1.35rem; font-weight: 800; color: var(--navy); line-height: 1.15; }
+.nh-stat-box span { display: block; font-size: .8rem; color: var(--muted); margin-top: 4px; font-weight: 500; }
+.law-pillars-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+.law-pillar-card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.law-pillar-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(11,18,33,.08); border-color: #93C5FD; }
+.law-pillar-num { display: inline-block; font-family: var(--mono); font-size: .72rem; font-weight: 700; color: var(--blue); background: #EFF6FF; padding: 4px 10px; border-radius: 999px; margin-bottom: 12px; }
+.law-pillar-card h3 { font-size: 1.1rem; margin: 0 0 10px; color: var(--navy); }
+.law-pillar-card p { font-size: .9rem; line-height: 1.65; color: var(--body-txt); margin: 0; }
+.law-subniche-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.law-sub-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.law-sub-card strong { display: block; font-size: .96rem; color: var(--navy); margin-bottom: 6px; }
+.law-sub-card p { margin: 0; font-size: .86rem; line-height: 1.6; color: var(--muted); }
+.law-calc-card { background: #0B1221; color: #fff; border-radius: 22px; padding: 36px; border: 1px solid #1E293B; box-shadow: 0 24px 60px rgba(11,18,33,.18); }
+.law-calc-presets { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.law-preset { padding: 9px 16px; border-radius: 999px; font-size: .82rem; font-weight: 700; cursor: pointer; border: 1px solid #334155; background: #1E293B; color: #CBD5E1; transition: all .18s ease; }
+.law-preset.is-active { background: #2563EB; color: #fff; border-color: #3B82F6; box-shadow: 0 6px 18px rgba(37,99,235,.35); }
+.law-calc-inputs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-bottom: 24px; }
+.law-calc-inputs label { display: block; font-size: .8rem; color: #93C5FD; margin-bottom: 6px; font-weight: 700; }
+.law-calc-inputs input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #334155; background: #162033; color: #fff; font-size: 1.05rem; font-weight: 700; }
+.law-calc-outputs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 22px; border-radius: 16px; background: #111C33; border: 1px solid #26354F; }
+.law-calc-outputs span { font-family: var(--mono); font-size: .72rem; font-weight: 700; display: block; }
+.law-calc-outputs strong { display: block; font-family: var(--display); font-size: 1.7rem; margin: 6px 0 4px; }
+.law-calc-outputs small { color: #94A3B8; font-size: .78rem; }
+@media (max-width: 980px) {
+  .niche-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .nh-trust-strip, .law-subniche-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .law-pillars-grid, .law-calc-inputs, .law-calc-outputs { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .niche-hero { padding: 98px 0 48px; }
+  .nh-checks, .nh-trust-strip, .law-subniche-grid { grid-template-columns: 1fr; }
+  .law-calc-card { padding: 24px 18px; }
+}
 .post-card p { font-size: .9rem; color: var(--body-txt); line-height: 1.65; margin-bottom: 16px; }
 .post-takeaways {
   background: var(--bg-soft);
