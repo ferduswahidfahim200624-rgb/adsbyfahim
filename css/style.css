@@ -1994,6 +1994,14 @@ section { padding: clamp(54px, 7.5vw, 90px) 0; }
   font-weight: 700; padding: 4px 10px; border-radius: 100px;
 }
 .post-card h3 { font-size: 1.32rem; margin-bottom: 10px; line-height: 1.3; }
+.post-card.niche-article { padding: 40px; gap: 0; display: block; }
+.post-card.niche-article h2 { font-size: clamp(1.32rem, 2.4vw, 1.65rem); margin: 28px 0 12px; color: var(--navy); line-height: 1.25; }
+.post-card.niche-article h2:first-child { margin-top: 0; }
+.post-card.niche-article h3 { font-size: 1.12rem; margin: 20px 0 8px; color: var(--navy); }
+.post-card.niche-article p { margin: 0 0 14px; color: var(--body-txt); line-height: 1.75; }
+.post-card.niche-article ul, .post-card.niche-article ol { margin: 0 0 18px; padding-left: 22px; color: var(--body-txt); line-height: 1.75; }
+.post-card.niche-article li { margin-bottom: 8px; }
+@media (max-width: 680px) { .post-card.niche-article { padding: 24px 20px; } }
 .post-card p { font-size: .9rem; color: var(--body-txt); line-height: 1.65; margin-bottom: 16px; }
 .post-takeaways {
   background: var(--bg-soft);
@@ -2683,7 +2691,7 @@ section { padding: clamp(54px, 7.5vw, 90px) 0; }
   border-radius: 4px;
 }
 
-.fe-col h4 {
+.fe-col h3, .fe-col h4 {
   font-family: var(--display);
   font-size: .82rem;
   font-weight: 700;
