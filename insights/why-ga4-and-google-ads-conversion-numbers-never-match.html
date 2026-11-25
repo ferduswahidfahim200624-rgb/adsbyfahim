@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Your GA4 &amp; Google Ads Numbers Never Match (And</title>
+<meta name="description" content="In 7 out of 10 audits I run, the ad account is either counting every page refresh of /thank-you as a new lead, or missing 40% of phone calls.">
+<meta name="author" content="Ferdous Wahid Fahim">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://adsbyfahim.pages.dev/insights/why-ga4-and-google-ads-conversion-numbers-never-match">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://adsbyfahim.pages.dev/insights/why-ga4-and-google-ads-conversion-numbers-never-match">
+<meta property="og:title" content="Why Your GA4 &amp; Google Ads Numbers Never Match (And How to Fix Double-Counting)">
+<meta property="og:description" content="In 7 out of 10 audits I run, the ad account is either counting every page refresh of /thank-you as a new lead, or missing 40% of phone calls.">
+<meta property="og:image" content="https://adsbyfahim.pages.dev/assets/og-preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Your GA4 &amp; Google Ads Numbers Never Match (And How to Fix Double-Counting)">
+<meta name="twitter:description" content="In 7 out of 10 audits I run, the ad account is either counting every page refresh of /thank-you as a new lead, or missing 40% of phone calls.">
+<meta name="twitter:image" content="https://adsbyfahim.pages.dev/assets/og-preview.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Why Your GA4 & Google Ads Numbers Never Match (And How to Fix Double-Counting)",
+      "description": "In 7 out of 10 audits I run, the ad account is either counting every page refresh of /thank-you as a new lead, or missing 40% of phone calls.",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-25",
+      "url": "https://adsbyfahim.pages.dev/insights/why-ga4-and-google-ads-conversion-numbers-never-match",
+      "mainEntityOfPage": "https://adsbyfahim.pages.dev/insights/why-ga4-and-google-ads-conversion-numbers-never-match",
+      "image": "https://adsbyfahim.pages.dev/assets/og-preview.jpg",
+      "author": {
+        "@type": "Person",
+        "@id": "https://adsbyfahim.pages.dev/#person",
+        "name": "Ferdous Wahid Fahim",
+        "url": "https://adsbyfahim.pages.dev/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ads by Fahim",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://adsbyfahim.pages.dev/assets/favicon.svg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://adsbyfahim.pages.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://adsbyfahim.pages.dev/insights"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Why Your GA4 & Google Ads Numbers Never Match (And How to Fix Double-Counting)",
+          "item": "https://adsbyfahim.pages.dev/insights/why-ga4-and-google-ads-conversion-numbers-never-match"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do Google Ads and GA4 show different conversion numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Ads and GA4 differ for two reasons: accidental double-counting (having both a native Google Ads conversion tag and an imported GA4 key event set to Primary for the same action) and normal structural differences (Google Ads reports by click date and last-ad-click, whereas GA4 reports by conversion event date across all channels)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I fix Google Ads double counting conversions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go to Google Ads > Goals > Conversions > Summary. Make sure only ONE conversion source per action is marked Primary (recommended: keep the native Google Ads tag with Enhanced Conversions as Primary and set the imported GA4 event to Secondary). Set lead actions to count 'One' instead of 'Every', and pass a unique transaction_id for eCommerce purchases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 'Google Ads conversion tracking setup is incomplete' mean in GTM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This diagnostic warning usually means your Google Ads Conversion Linker tag is missing in Google Tag Manager, Enhanced Conversions user-provided data (email/phone) is not mapped correctly from the dataLayer, or Consent Mode v2 signals are not firing before the conversion tag."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/favicon.svg">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQW75H6M');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQW75H6M"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <img src="/assets/favicon.svg" alt="Ads by Fahim Logo" class="brand-logo" width="36" height="36">
+      <span class="brand-text">Ads by <em>Fahim</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary Navigation">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/#results">Case Studies</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/insights" class="is-active">Insights</a>
+      <a href="/about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="/#contact" class="btn btn-primary btn-sm">Free Audit →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container" style="max-width:840px;">
+    <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/insights">Insights</a> <span>/</span> <span>Conversion Tracking</span></div>
+    <div class="role-badges" style="margin-bottom:14px;">
+      <span class="role-pill is-highlight">Conversion Tracking</span>
+      <span class="role-pill">8 Min Read</span>
+      <span class="role-pill">Published 2026-11-12</span>
+      <span class="role-pill">By Ferdous Wahid Fahim</span>
+    </div>
+    <h1>Why Your GA4 &amp; Google Ads Numbers Never Match (And How to Fix Double-Counting)</h1>
+    <p>In 7 out of 10 audits I run, the ad account is either counting every page refresh of /thank-you as a new lead, or missing 40% of phone calls. Both destroy Smart Bidding efficiency.</p>
+  </div>
+</section>
+
+<section class="results" style="padding-top:36px;">
+  <div class="container" style="max-width:840px;">
+    <article class="post-card" style="padding:36px;">
+      <h2>Key Takeaways</h2>
+      <ul class="post-takeaways" style="margin-bottom:28px;">
+          <li>Primary vs. Secondary Actions: Never set both a native Google Ads tag and an imported GA4 key event as Primary.</li>
+          <li>Transaction / Event ID Deduplication: Pass a unique event_id in the dataLayer so refreshes never double-count.</li>
+          <li>Enhanced Conversions: Enable SHA-256 hashed email &amp; phone matching in GTM to recover cross-device conversions.</li>
+      </ul>
+      <div class="am-content" style="font-size:1.05rem;line-height:1.75;">
+        <h2>Direct Answer: Why GA4 &amp; Google Ads Conversion Numbers Disagree</h2><p>When Google Analytics 4 (GA4) and Google Ads conversion numbers are drastically out of sync, the root cause is almost always <b>having both a native Google Ads tag and an imported GA4 Key Event set to Primary</b>, or firing a Google Tag Manager (GTM) trigger multiple times on page reloads. Even after fixing tracking bugs, a 5–15% difference is normal because Google Ads attributes conversions to the <b>ad click date</b>, while GA4 attributes them to the <b>conversion event date</b> across all channels.</p><h2>Cause #1: Native Google Ads Tag + Imported GA4 Key Event Both Set to Primary</h2><p>Google's Target CPA and Target ROAS algorithms optimize toward whatever you mark as a <b>Primary Conversion Action</b>. The #1 mistake I find during tracking audits is an account where a prospect submits one form, and Google Ads records <b>2 conversions</b>:</p><ul><li>Conversion 1 fires from the native <b>Google Ads Conversion Tracking Tag</b> in GTM.</li><li>Conversion 2 is imported automatically from a linked <b>GA4 Key Event</b> (such as <code>generate_lead</code> or <code>purchase</code>).</li></ul><p><b>The Fix:</b> Open Google Ads &gt; <i>Goals &gt; Conversions &gt; Summary</i>. Keep the native Google Ads tag (paired with Enhanced Conversions) as <b>Primary</b> for bidding, and switch the imported GA4 key event to <b>Secondary (Observe Only)</b>. That way you can still compare both columns in custom reports without inflating your conversion count.</p><h2>Cause #2: Client-Side Duplicate Firing in GTM (Thank-You Reloads &amp; Counting 'Every')</h2><p>If a lead bookmarks or refreshes your <code>/thank-you</code> page on mobile, a basic page-view trigger will fire the conversion tag again. Worse, if the Google Ads conversion action is set to count <b>Every</b> instead of <b>One</b>, every reload inflates your reported leads.</p><ul><li><b>For Lead Generation (Forms, Bookings, Calls):</b> Edit the conversion action settings in Google Ads and set <b>Count = One</b> per ad click. In GTM, fire the tag on a verified form-submission dataLayer event (e.g., <code>generate_lead</code>) rather than a naked URL match.</li><li><b>For Shopify &amp; WooCommerce eCommerce:</b> Keep <b>Count = Every</b> (since a customer can place two real orders), but always pass a dynamic <code>transaction_id</code> (Order ID) in the <code>dataLayer</code> so Google Ads automatically deduplicates order-confirmation page refreshes.</li></ul><h2>Cause #3: Configure Google Tag Manager for Enhanced Conversions</h2><p>Safari ITP, mobile browser switches, and ad-blockers strip URL click identifiers (<code>gclid</code>). When you configure <b>Enhanced Conversions in Google Tag Manager</b>, GTM captures first-party customer data (email address, phone number, first/last name) at the moment of form submit or checkout, hashes it with <b>SHA-256</b>, and matches it back to the signed-in Google account that clicked your ad.</p><h2>Cause #4: Structural Differences You Should Not 'Fix'</h2><p>Once double-counting is eliminated, expect three healthy differences between platforms:</p><ol><li><b>Click Date vs. Conversion Date:</b> If a buyer clicks your ad on November 20 and submits a lead form on November 24, Google Ads credits November 20 (by default), while GA4 credits November 24. Use the <i>Conversions (by conv. time)</i> column in Google Ads to compare apples to apples.</li><li><b>Attribution Scope:</b> Google Ads only evaluates Google Ads touchpoints; GA4 shares credit across Organic Search, Direct, Email, and Paid Social.</li><li><b>Conversion Lookback Windows:</b> A 90-day click lookback window in Google Ads will capture long-cycle B2B or legal leads that a 30-day window in GA4 drops.</li></ol><h2>5-Minute GTM &amp; Tag Assistant QA Checklist</h2><p>Before spending another dollar on Smart Bidding, run this diagnostic check: open <b>tagassistant.google.com</b>, submit a live test lead or test order, confirm the <b>Conversion Linker</b> fires on all pages, verify your Primary conversion tag fires <b>once</b>, and confirm the Enhanced Conversions parameter object passes a valid hashed email or phone value.</p>
+      </div>
+      <hr style="border:none;border-top:1px solid var(--line);margin:32px 0;">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom:28px;">
+        <details style="border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;background:#F8FAFC;">
+          <summary style="font-weight:700;cursor:pointer;color:var(--navy);">Why do Google Ads and GA4 show different conversion numbers?</summary>
+          <p style="margin:10px 0 0;color:var(--muted);line-height:1.7;">Google Ads and GA4 differ for two reasons: accidental double-counting (having both a native Google Ads conversion tag and an imported GA4 key event set to Primary for the same action) and normal structural differences (Google Ads reports by click date and last-ad-click, whereas GA4 reports by conversion event date across all channels).</p>
+        </details>
+        <details style="border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;background:#F8FAFC;">
+          <summary style="font-weight:700;cursor:pointer;color:var(--navy);">How do I fix Google Ads double counting conversions?</summary>
+          <p style="margin:10px 0 0;color:var(--muted);line-height:1.7;">Go to Google Ads &gt; Goals &gt; Conversions &gt; Summary. Make sure only ONE conversion source per action is marked Primary (recommended: keep the native Google Ads tag with Enhanced Conversions as Primary and set the imported GA4 event to Secondary). Set lead actions to count &#x27;One&#x27; instead of &#x27;Every&#x27;, and pass a unique transaction_id for eCommerce purchases.</p>
+        </details>
+        <details style="border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;background:#F8FAFC;">
+          <summary style="font-weight:700;cursor:pointer;color:var(--navy);">What does &#x27;Google Ads conversion tracking setup is incomplete&#x27; mean in GTM?</summary>
+          <p style="margin:10px 0 0;color:var(--muted);line-height:1.7;">This diagnostic warning usually means your Google Ads Conversion Linker tag is missing in Google Tag Manager, Enhanced Conversions user-provided data (email/phone) is not mapped correctly from the dataLayer, or Consent Mode v2 signals are not firing before the conversion tag.</p>
+        </details>
+      </div>
+      <hr style="border:none;border-top:1px solid var(--line);margin:32px 0;">
+      <h2>About the Author</h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:24px;"><b>Ferdous Wahid Fahim</b> is a Google Ads Search Certified Specialist (ID: 195327298) and Conversion Tracking Engineer (GA4, Google Tag Manager, Stape.io Server-Side Tracking, Meta CAPI, CallRail, GoHighLevel) who has supported 100+ clients and delivered 50+ projects across the US, UK, Canada, Australia, and New Zealand.</p>
+      <h2>Related Playbooks &amp; Resources</h2>
+      <ul style="line-height:2;padding-left:20px;margin-bottom:28px;">
+          <li><a href="/insights/cut-local-business-google-ads-cpa-by-67-percent" style="color:var(--blue);font-weight:600;">How I Cut a Local Business Google Ads CPA by 67% ($83.88 → $27.87) →</a></li>
+          <li><a href="/insights/server-side-tracking-stape-io-meta-capi-playbook" style="color:var(--blue);font-weight:600;">Server-Side Tracking with Stape.io &amp; Meta CAPI: The 2026 Playbook →</a></li>
+          <li><a href="/insights/7-day-high-intent-search-sprint-303-conversions" style="color:var(--blue);font-weight:600;">The 7-Day High-Intent Search Sprint: How We Hit 303 Conversions at 20.42% CVR →</a></li>
+        <li><a href="/google-ads-home-services" style="color:var(--blue);font-weight:600;">Google Ads &amp; Call Tracking for Home Services (HVAC, Roofing &amp; Contractors) →</a></li>
+        <li><a href="/stape-server-side-tracking" style="color:var(--blue);font-weight:600;">Stape.io Server-Side Tracking, GA4, GTM &amp; Meta CAPI Setup Service →</a></li>
+        <li><a href="/services" style="color:var(--blue);font-weight:600;">Explore All Google Ads &amp; Conversion Tracking Packages →</a></li>
+        <li><a href="/portfolio" style="color:var(--blue);font-weight:600;">View Verified Google Ads &amp; Conversion Tracking Case Studies →</a></li>
+      </ul>
+      <div style="background:#F8FAFC;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <div>
+          <strong style="display:block;font-size:1.1rem;color:var(--navy);">Want me to implement this playbook in your account?</strong>
+          <span style="color:var(--muted);font-size:.92rem;">Book a free 30-minute Google Ads &amp; GA4/GTM diagnostic audit with Ferdous Wahid Fahim.</span>
+        </div>
+        <a href="/#contact" class="btn btn-primary">Book Free 30-Min Audit →</a>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="footer-exec">
+  <div class="container">
+    <div class="fe-bottom">
+      <span>© 2026 Ferdous Wahid Fahim · Google Ads &amp; Conversion Tracking Specialist.</span>
+      <div class="fe-bottom-links">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/insights">Insights</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>
