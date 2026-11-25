@@ -20,6 +20,9 @@ Ferdous Wahid Fahim is a Google Ads Search Certified Specialist (Cert ID: 195327
 ## Public Pages & Technical Playbooks
 - **Homepage & ROI Leak Calculator:** https://adsbyfahim.pages.dev/
 - **Services & Deliverables:** https://adsbyfahim.pages.dev/services
+- **Google Ads & Signed-Case Tracking for Law Firms & Attorneys:** https://adsbyfahim.pages.dev/google-ads-law-firms
+- **Google Ads for Personal Injury & Accident Lawyers:** https://adsbyfahim.pages.dev/google-ads-personal-injury-lawyers
+- **Google Ads for Family, Divorce & Immigration Lawyers:** https://adsbyfahim.pages.dev/google-ads-immigration-family-lawyers
 - **Google Ads & Call Tracking for Home Services (HVAC, Roofing, Contractors):** https://adsbyfahim.pages.dev/google-ads-home-services
 - **Stape.io Server-Side Tracking, GA4, GTM & Meta CAPI Setup Service:** https://adsbyfahim.pages.dev/stape-server-side-tracking
 - **Verified Portfolio & Case Studies:** https://adsbyfahim.pages.dev/portfolio
