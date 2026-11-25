@@ -202,6 +202,7 @@
     </a>
 
     <button type="button" class="cms-nav-btn is-active" data-tab="tab-blog">âœï¸ Weekly Blog Studio</button>
+    <button type="button" class="cms-nav-btn" data-tab="tab-pages">📄 Niche Page Builder</button>
     <button type="button" class="cms-nav-btn" data-tab="tab-github">â˜ï¸ GitHub + Cloudflare Sync</button>
     <button type="button" class="cms-nav-btn" data-tab="tab-leads">ðŸ“¥ Captured Leads (<span id="leadCountBadge">0</span>)</button>
     <button type="button" class="cms-nav-btn" data-tab="tab-seo">ðŸ” Security &amp; SEO/AIO</button>
@@ -319,6 +320,33 @@
     </section>
 
     <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• TAB 2: GITHUB + CLOUDFLARE LIVE SYNC â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <section class="cms-panel" id="tab-pages">
+      <div class="cms-card">
+        <h2>📄 Unified Niche Landing Page Builder (Master Header + Executive Footer Locked)</h2>
+        <p style="font-size:.9rem;color:var(--body-txt);margin-bottom:18px;max-width:78ch;">
+          Create new industry landing pages (Law Firms, Medical, Roofing, Shopify, etc.) using the <b>exact locked Master Header, 4-Column Executive Footer, GTM-PQW75H6M, and Service + BreadcrumbList JSON-LD Schema</b>—zero broken layouts.
+        </p>
+        <form id="nichePageForm">
+          <div class="cms-row">
+            <div class="cms-field"><label for="npSlug">Page URL Slug (without .html) *</label><input type="text" id="npSlug" placeholder="e.g. google-ads-dental-clinics" required></div>
+            <div class="cms-field"><label for="npVisual">Hero Visual Dashboard SVG</label><select id="npVisual"><option value="/assets/legal-google-ads-dashboard.svg">Law Firm Google Ads Command Center</option><option value="/assets/legal-pi-intake-funnel.svg">Personal Injury 3-Stage Funnel</option><option value="/assets/legal-callrail-clio-crm.svg">Family &amp; Immigration Law Pipeline</option><option value="/assets/service-lead-gen.svg">Home Services &amp; Local Lead Gen</option><option value="/assets/service-server-crm.svg">Stape.io Server-Side &amp; CallRail CRM</option><option value="/assets/service-google-ads-ecom.svg">eCommerce Shopping &amp; PMax</option></select></div>
+          </div>
+          <div class="cms-row">
+            <div class="cms-field"><label for="npTitle">SEO Title (≤ 60 chars) *</label><input type="text" id="npTitle" placeholder="e.g. Google Ads Specialist for Dental Clinics — Fahim" required></div>
+            <div class="cms-field"><label for="npDesc">Meta Description (140–160 chars) *</label><input type="text" id="npDesc" placeholder="Book more high-value dental implant &amp; emergency patients with Google Ads &amp; CallRail tracking." required></div>
+          </div>
+          <div class="cms-field"><label for="npH1">Hero H1 Headline *</label><input type="text" id="npH1" placeholder="e.g. Google Ads &amp; Call Tracking Specialist for Dental Clinics" required></div>
+          <div class="cms-field"><label for="npSub">Hero Intro Paragraph *</label><textarea id="npSub" style="min-height:70px;" placeholder="Explain the exact pain point and how your Google Ads + GTM/CallRail setup solves it..." required></textarea></div>
+          <div class="cms-field"><label for="npBody">Main Page Body HTML (Use &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;ul&gt;)</label><textarea id="npBody" style="min-height:140px;" placeholder="&lt;h2&gt;Direct Answer: How We Scale Qualified Clients&lt;/h2&gt;&lt;p&gt;...&lt;/p&gt;"></textarea></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button type="button" id="btnDownloadNichePage" class="btn btn-ghost">⬇ Download Clean HTML File</button>
+            <button type="button" id="btnPushNichePageGh" class="btn btn-primary">🚀 Publish Live Directly to GitHub</button>
+          </div>
+          <div id="npStatus" class="cms-toast"></div>
+        </form>
+      </div>
+    </section>
+
     <section class="cms-panel" id="tab-github">
       <div class="cms-card">
         <h2>â˜ï¸ GitHub + Cloudflare Pages Dynamic Publishing ($0 Cost Forever)</h2>
@@ -830,6 +858,67 @@
         gtmToast.textContent = "âœ… GTM Container ID (" + val + ") saved! All pages will load this container.";
         gtmToast.classList.add("is-visible");
       }
+    });
+  }
+  /* ── Unified Niche Landing Page Builder (Locked Master Header & Executive Footer) ── */
+  function buildMasterNicheHtml() {
+    var slug = (document.getElementById("npSlug").value || "").trim().toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-|-$/g, "");
+    var title = (document.getElementById("npTitle").value || "").trim();
+    var desc = (document.getElementById("npDesc").value || "").trim();
+    var h1 = (document.getElementById("npH1").value || "").trim();
+    var sub = (document.getElementById("npSub").value || "").trim();
+    var visual = document.getElementById("npVisual").value || "/assets/service-lead-gen.svg";
+    var bodyHtml = (document.getElementById("npBody").value || "").trim() || "<h2>Direct Answer</h2><p>" + sub + "</p>";
+    var url = "https://adsbyfahim.pages.dev/" + slug;
+    var schemaObj = {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Service", "name": title, "url": url, "provider": { "@type": "Person", "@id": "https://adsbyfahim.pages.dev/#person", "name": "Ferdous Wahid Fahim", "url": "https://adsbyfahim.pages.dev/about" }, "areaServed": ["US","GB","CA","AU","NZ"], "description": desc },
+        { "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adsbyfahim.pages.dev/" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://adsbyfahim.pages.dev/services" }, { "@type": "ListItem", "position": 3, "name": h1, "item": url }] }
+      ]
+    };
+    return {
+      slug: slug,
+      html: '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>' + title + '</title>\n<meta name="description" content="' + desc + '">\n<meta name="robots" content="index, follow">\n<link rel="canonical" href="' + url + '">\n<meta property="og:type" content="website">\n<meta property="og:url" content="' + url + '">\n<meta property="og:title" content="' + title + '">\n<meta property="og:description" content="' + desc + '">\n<meta property="og:image" content="https://adsbyfahim.pages.dev/assets/og-preview.jpg">\n<script type="application/ld+json">\n' + JSON.stringify(schemaObj, null, 2) + '\n</' + 'script>\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="/css/style.css">\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-PQW75H6M");</' + 'script>\n</head>\n<body>\n<div class="scroll-progress" id="scrollProgress"></div>\n<a class="skip" href="#mainContent">Skip to content</a>\n<header class="nav" id="top"><div class="nav-inner"><a href="/" class="brand"><img src="/assets/favicon.svg" alt="Ads by Fahim Logo" class="brand-logo" width="36" height="36"><span class="brand-text">Ads by <em>Fahim</em></span></a><nav class="nav-links" id="navLinks" aria-label="Primary Navigation"><a href="/">Home</a><a href="/services" class="is-active">Services</a><a href="/#results">Case Studies</a><a href="/portfolio">Portfolio</a><a href="/insights">Insights</a><a href="/about">About</a><a href="/#contact">Contact</a><div class="nav-mobile-cta"><a href="/#contact" class="btn btn-primary btn-sm">Free Audit →</a></div></nav><div class="nav-right"><a href="/#contact" class="btn btn-primary btn-sm">Free Audit →</a><button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button></div></div></header>\n<main id="mainContent">\n<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/services">Services</a> <span>/</span> <span>' + h1 + '</span></div><h1>' + h1 + '</h1><p>' + sub + '</p></div></section>\n<section class="results"><div class="container" style="max-width:940px;"><div style="border-radius:20px;overflow:hidden;box-shadow:0 18px 46px rgba(11,18,33,.10);border:1px solid var(--line);margin-bottom:28px;background:#fff;"><img src="' + visual + '" alt="' + title + '" width="840" height="460" fetchpriority="high" style="width:100%;height:auto;display:block;"></div><article class="post-card niche-article">' + bodyHtml + '<div style="margin-top:28px;background:#0B1221;color:#fff;border-radius:16px;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;"><div><strong style="display:block;font-size:1.15rem;color:#fff;">Book Your Free 30-Minute Diagnostic Audit</strong><span style="color:#CBD5E1;font-size:.9rem;">Get a live review of your Google Ads search terms, CPA, and GTM/GA4 conversion signals.</span></div><a href="/#contact" class="btn btn-primary">Book Free Audit →</a></div></article></div></section>\n</main>\n<footer class="footer-exec"><div class="container"><div class="fe-grid"><div class="fe-brand-card"><a href="/" class="brand"><img src="/assets/favicon.svg" alt="Ads by Fahim Logo" class="brand-logo" width="36" height="36"><span class="brand-text">Ads by <em>Fahim</em></span></a><p>Google Ads Specialist, GA4/GTM &amp; Stape Server-Side Conversion Tracking Engineer helping high-ticket lead gen and eCommerce businesses cut wasted spend and scale profitably.</p><div class="fe-markets-head"><span>Active Client Markets</span><span>5 REGIONS</span></div><div class="fe-markets"><span><b>US</b> United States</span><span><b>UK</b> United Kingdom</span><span><b>CA</b> Canada</span><span><b>AU</b> Australia &amp; NZ</span></div></div><div class="fe-col"><h4>Navigation</h4><a href="/">Home</a><a href="/services">Services &amp; Packages</a><a href="/portfolio">Verified Case Studies</a><a href="/insights">Insights &amp; Weekly Blog</a><a href="/about">About Me &amp; Experience</a><a href="/assets/Ferdous_Wahid_Fahim_CV.pdf" target="_blank" rel="noopener">Download CV (PDF) ↗</a></div><div class="fe-col"><h4>Core Expertise</h4><a href="/google-ads-law-firms">Google Ads for Law Firms</a><a href="/google-ads-personal-injury-lawyers">Personal Injury Lawyers PPC</a><a href="/google-ads-home-services">Home Services, HVAC &amp; Roofing</a><a href="/stape-server-side-tracking">Stape.io Server-Side &amp; CAPI</a><a href="/services#conversion-tracking">GA4, GTM &amp; CallRail Tracking</a><a href="/#calculator">Ad Spend Leak Calculator</a></div><div class="fe-audit-card"><div class="fe-audit-top"><strong>Free 30-Min Audit</strong><span>🟢 OPEN THIS WEEK</span></div><p>Get a live diagnostic walkthrough of your Google Ads search terms, CPA trends, and GTM/GA4 conversion signals.</p><a href="/#contact" class="fe-audit-btn"><span>Claim Your Free Audit</span><span>→</span></a><div class="fe-contact-mini"><span>WhatsApp: <a href="https://wa.me/8801521724734" target="_blank" rel="noopener">+880 1521-724734</a></span><span>Email: <a href="mailto:ferdouswahidfahim24@gmail.com">ferdouswahidfahim24@gmail.com</a></span></div></div></div><div class="fe-bottom"><span>© <span id="year"></span> Ferdous Wahid Fahim — Google Ads Certified (ID: 195327298).</span><div class="fe-bottom-links"><a href="/about#movex-note">Team Projects: MoveX Digital</a><a href="/llms.txt" target="_blank" rel="noopener">AI / LLM Ready</a><a href="/sitemap.xml" target="_blank" rel="noopener">Sitemap</a><a href="#top">Back to top ↑</a></div></div></div></footer>\n<script src="/js/main.js"></' + 'script>\n</body>\n</html>'
+    };
+  }
+  var btnDlNiche = document.getElementById("btnDownloadNichePage");
+  var btnPushNiche = document.getElementById("btnPushNichePageGh");
+  var npStatus = document.getElementById("npStatus");
+  if (btnDlNiche) {
+    btnDlNiche.addEventListener("click", function () {
+      var res = buildMasterNicheHtml();
+      if (!res.slug) { npStatus.textContent = "⚠️ Please enter a URL slug first."; npStatus.classList.add("is-visible"); return; }
+      var blob = new Blob([res.html], { type: "text/html" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = res.slug + ".html";
+      a.click();
+      npStatus.textContent = "✓ Downloaded " + res.slug + ".html with locked Master Header & Executive Footer.";
+      npStatus.classList.add("is-visible");
+    });
+  }
+  if (btnPushNiche) {
+    btnPushNiche.addEventListener("click", function () {
+      var cfg = saveGhSettings();
+      var res = buildMasterNicheHtml();
+      if (!res.slug || !cfg.owner || !cfg.repo || !cfg.token) {
+        npStatus.textContent = "⚠️ Enter URL slug and save your GitHub Token in Tab 3 (GitHub Sync) first.";
+        npStatus.classList.add("is-visible");
+        return;
+      }
+      npStatus.textContent = "⏳ Publishing " + res.slug + ".html directly to GitHub...";
+      npStatus.classList.add("is-visible");
+      var apiUrl = "https://api.github.com/repos/" + cfg.owner + "/" + cfg.repo + "/contents/" + res.slug + ".html";
+      fetch(apiUrl + "?ref=" + encodeURIComponent(cfg.branch), { headers: { "Authorization": "Bearer " + cfg.token, "Accept": "application/vnd.github+json" } })
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .then(function (meta) {
+          var body = { message: "Publish niche page /" + res.slug + " via Fahim Admin CMS", content: btoa(unescape(encodeURIComponent(res.html))), branch: cfg.branch };
+          if (meta && meta.sha) body.sha = meta.sha;
+          return fetch(apiUrl, { method: "PUT", headers: { "Authorization": "Bearer " + cfg.token, "Accept": "application/vnd.github+json", "Content-Type": "application/json" }, body: JSON.stringify(body) });
+        })
+        .then(function (r) { if (!r.ok) throw new Error("GitHub API " + r.status); npStatus.textContent = "✅ Published https://adsbyfahim.pages.dev/" + res.slug + " live via Cloudflare Pages!"; })
+        .catch(function (err) { npStatus.textContent = "⚠️ Publish failed: " + err.message; });
     });
   }
 })();
