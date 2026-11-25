@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 460" width="840" height="460">
+  <defs>
+    <linearGradient id="bgLaw" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1221"/>
+      <stop offset="55%" stop-color="#111C33"/>
+      <stop offset="100%" stop-color="#0F2942"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <filter id="lawSh" x="-10%" y="-10%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#020617" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+
+  <rect width="840" height="460" rx="22" fill="url(#bgLaw)"/>
+  <circle cx="150" cy="110" r="150" fill="#1F74F0" opacity="0.14"/>
+  <circle cx="710" cy="360" r="170" fill="#16A34A" opacity="0.12"/>
+
+  <!-- Top Bar: Official Google Ads Logo + Law Firm Command Center Header -->
+  <g transform="translate(28, 22)" filter="url(#lawSh)">
+    <rect width="784" height="52" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <!-- Official Google Ads 3-Color Triangle/Bar Icon -->
+    <g transform="translate(18, 13) scale(1.08)">
+      <path fill="#FBBC04" d="M3.3 18.2 10.6 5.5c.7-1.2 2.2-1.6 3.4-.9 1.2.7 1.6 2.2.9 3.4L7.6 20.7c-.7 1.2-2.2 1.6-3.4.9-1.2-.7-1.6-2.2-.9-3.4z"/>
+      <path fill="#4285F4" d="M20.7 18.2 13.4 5.5c-.7-1.2-2.2-1.6-3.4-.9l4.3 7.5 3.1 5.3c.7 1.2 2.2 1.6 3.4.9 1.1-.7 1.6-2.2.9-2.1z"/>
+      <circle fill="#34A853" cx="5.5" cy="19.5" r="2.6"/>
+    </g>
+    <text x="54" y="25" font-family="Sora, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">Google Ads · Law Firm Signed-Retainer Command Center</text>
+    <text x="54" y="41" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#93C5FD">SEARCH · LSA · CALLRAIL DNI · CLIO / LAWMATICS OFFLINE GCLID SYNC</text>
+    <rect x="618" y="12" width="150" height="28" rx="14" fill="rgba(74,222,128,0.16)" stroke="#4ADE80"/>
+    <circle cx="634" cy="26" r="4.5" fill="#4ADE80"/>
+    <text x="646" y="30" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#4ADE80">BAR-COMPLIANT</text>
+  </g>
+
+  <!-- LEFT PANEL: Live Google Search Attorney SERP & Pro-Bono Negative Shield -->
+  <g transform="translate(28, 92)" filter="url(#lawSh)">
+    <rect width="388" height="342" rx="18" fill="#FFFFFF"/>
+    <!-- Search Query Input -->
+    <rect x="18" y="18" width="352" height="42" rx="21" fill="#F8FAFC" stroke="#3B82F6" stroke-width="2"/>
+    <circle cx="40" cy="39" r="6.5" fill="none" stroke="#1D4ED8" stroke-width="2.2"/>
+    <line x1="45" y1="44" x2="50" y2="49" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="60" y="44" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#0F172A">"personal injury &amp; family lawyer near me"</text>
+    <rect x="296" y="26" width="64" height="26" rx="13" fill="url(#blueGrad)"/>
+    <text x="311" y="43" font-family="Inter, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">Search</text>
+
+    <!-- Sponsored #1 Law Firm Ad Card -->
+    <g transform="translate(18, 74)">
+      <rect width="352" height="146" rx="14" fill="#F0F7FF" stroke="#2563EB" stroke-width="1.8"/>
+      <rect x="14" y="12" width="84" height="20" rx="6" fill="#0F172A"/>
+      <text x="22" y="26" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="700" fill="#FBBF24">⚖️ SPONSORED #1</text>
+      <text x="108" y="26" font-family="Inter, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#475569">yourlawfirm.com · Verified Attorney</text>
+      <text x="14" y="52" font-family="Sora, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#1D4ED8">Speak Directly With a Trial Attorney — 24/7 Intake</text>
+      <text x="14" y="71" font-family="Inter, Arial, sans-serif" font-size="11" fill="#334155">Confidential Case Evaluation. No Fee Unless We Win Your</text>
+      <text x="14" y="86" font-family="Inter, Arial, sans-serif" font-size="11" fill="#334155">Injury Claim. Immediate Phone &amp; Office Consultations.</text>
+      <!-- Sitelink & Call Extensions -->
+      <rect x="14" y="98" width="142" height="20" rx="10" fill="#DCFCE7"/>
+      <text x="24" y="112" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#15803D">📞 (800) 555-LAW1 · 24/7</text>
+      <rect x="164" y="98" width="174" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="174" y="112" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#1D4ED8">📅 Book Case Evaluation →</text>
+      <text x="14" y="135" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="700" fill="#64748B">Sitelinks: Car Accidents · Divorce &amp; Custody · Immigration · Case Results</text>
+    </g>
+
+    <!-- Legal Negative Keyword Shield -->
+    <g transform="translate(18, 234)">
+      <rect width="352" height="92" rx="14" fill="#0F172A"/>
+      <text x="14" y="22" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="#FBBF24">🛡️ 500+ LEGAL NEGATIVE KEYWORD SHIELD ($150/CLICK PROTECTION)</text>
+      <g transform="translate(14, 34)">
+        <rect width="84" height="22" rx="11" fill="rgba(239,68,68,0.22)" stroke="#F87171"/>
+        <text x="10" y="15" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FCA5A5">✕ "pro bono"</text>
+        <rect x="94" width="84" height="22" rx="11" fill="rgba(239,68,68,0.22)" stroke="#F87171"/>
+        <text x="104" y="15" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FCA5A5">✕ "legal aid"</text>
+        <rect x="184" width="150" height="22" rx="11" fill="rgba(239,68,68,0.22)" stroke="#F87171"/>
+        <text x="194" y="15" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FCA5A5">✕ "paralegal jobs / salary"</text>
+      </g>
+      <g transform="translate(14, 62)">
+        <rect width="110" height="22" rx="11" fill="rgba(239,68,68,0.22)" stroke="#F87171"/>
+        <text x="10" y="15" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FCA5A5">✕ "free forms pdf"</text>
+        <rect x="120" width="98" height="22" rx="11" fill="rgba(239,68,68,0.22)" stroke="#F87171"/>
+        <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FCA5A5">✕ "law school"</text>
+        <rect x="224" width="110" height="22" rx="11" fill="rgba(74,222,128,0.2)" stroke="#4ADE80"/>
+        <text x="234" y="15" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4ADE80">✓ Retainer Buyers</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: Realistic Google Ads Legal Dashboard & Retainer Attribution -->
+  <g transform="translate(434, 92)" filter="url(#lawSh)">
+    <rect width="378" height="342" rx="18" fill="#FFFFFF"/>
+    <text x="20" y="28" font-family="Sora, Arial, sans-serif" font-size="14" font-weight="800" fill="#0F172A">Live Legal Campaign Performance &amp; Intake ROI</text>
+    <text x="20" y="45" font-family="Inter, Arial, sans-serif" font-size="11" fill="#64748B">Tracked via GTM Enhanced Conversions + CallRail DNI + Clio CRM</text>
+
+    <!-- 4 KPI Tiles mimicking Google Ads UI -->
+    <g transform="translate(20, 58)">
+      <rect width="162" height="72" rx="12" fill="#EFF6FF" stroke="#93C5FD"/>
+      <text x="14" y="22" font-family="Inter, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1D4ED8">QUALIFIED INTAKE CALLS</text>
+      <text x="14" y="50" font-family="Sora, Arial, sans-serif" font-size="22" font-weight="800" fill="#0F172A">100% DNI</text>
+      <text x="14" y="64" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#1E40AF">&gt;90s Call Duration Filter</text>
+
+      <rect x="176" width="162" height="72" rx="12" fill="#ECFDF5" stroke="#86EFAC"/>
+      <text x="190" y="22" font-family="Inter, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#15803D">VERIFIED CPA DROP</text>
+      <text x="190" y="50" font-family="Sora, Arial, sans-serif" font-size="22" font-weight="800" fill="#15803D">-67% CPA</text>
+      <text x="190" y="64" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#166534">$83.88 → $27.87 Benchmark</text>
+    </g>
+
+    <!-- Practice Area Cost-Per-Signed-Case Breakdown Table -->
+    <g transform="translate(20, 144)">
+      <rect width="338" height="122" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="14" y="22" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="#475569">PRACTICE AREA CAMPAIGN SEGMENTATION</text>
+      <line x1="14" y1="30" x2="324" y2="30" stroke="#E2E8F0"/>
+      <text x="14" y="50" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">⚖️ Personal Injury &amp; Auto</text>
+      <text x="195" y="50" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#15803D">24/7 Call-Only + Exact</text>
+      <text x="14" y="74" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">👨‍👩‍👧 Family &amp; Divorce Law</text>
+      <text x="195" y="74" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#1D4ED8">$3.56K Verified Campaign</text>
+      <text x="14" y="98" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">🌎 Immigration &amp; Criminal</text>
+      <text x="195" y="98" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="700" fill="#B45309">Booked Retainer Sync</text>
+    </g>
+
+    <!-- Bottom Closed-Loop Retainer Banner -->
+    <g transform="translate(20, 278)">
+      <rect width="338" height="46" rx="12" fill="#0F172A"/>
+      <text x="16" y="20" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" fill="#4ADE80">✓ CLOSED-LOOP LEGAL ATTRIBUTION</text>
+      <text x="16" y="36" font-family="Inter, Arial, sans-serif" font-size="11" fill="#E2E8F0">Google Ad Click (GCLID) → CallRail Intake → Signed Retainer</text>
+    </g>
+  </g>
+</svg>
