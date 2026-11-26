@@ -28,6 +28,7 @@ Ferdous Wahid Fahim is a Google Ads Search Certified Specialist (Cert ID: 195327
 - **Verified Portfolio & Case Studies:** https://adsbyfahim.pages.dev/portfolio
 - **About & Credentials:** https://adsbyfahim.pages.dev/about
 - **Insights Blog:** https://adsbyfahim.pages.dev/insights
+  - [How Law Firms Stop Wasting $100+ Google Ads Clicks with CallRail & Clio](https://adsbyfahim.pages.dev/insights/how-law-firms-stop-wasting-google-ads-clicks-callrail-clio)
   - [How I Cut a Local Business Google Ads CPA by 67% ($83.88 to $27.87)](https://adsbyfahim.pages.dev/insights/cut-local-business-google-ads-cpa-by-67-percent)
   - [Why Your GA4 & Google Ads Numbers Never Match (And How to Fix Double-Counting)](https://adsbyfahim.pages.dev/insights/why-ga4-and-google-ads-conversion-numbers-never-match)
   - [Server-Side Tracking with Stape.io & Meta CAPI: The 2026 Playbook](https://adsbyfahim.pages.dev/insights/server-side-tracking-stape-io-meta-capi-playbook)

@@ -29,6 +29,7 @@
         "@type": "Person",
         "@id": "https://adsbyfahim.pages.dev/#person",
         "name": "Ferdous Wahid Fahim",
+        "jobTitle": "Stape.io Server-Side GTM & Conversion Tracking Engineer",
         "url": "https://adsbyfahim.pages.dev/about"
       },
       "areaServed": ["US", "GB", "CA", "AU", "NZ"],
@@ -68,6 +69,14 @@
             "@type": "Answer",
             "text": "Most standalone GA4, GTM, Enhanced Conversions, and Stape.io server-side container rebuilds are completed, tested, and verified within 3 to 5 business days, starting with a free 30-minute diagnostic audit."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Will server-side tracking cause double-counting in Google Ads or Meta Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. I enforce strict 1:1 event_id and transaction_id deduplication between Web and Server containers, pause redundant hardcoded pixels, and configure only one Primary conversion source per action in Google Ads."
+          }
         }
       ]
     }
@@ -93,6 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQW75H6M"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 <div class="scroll-progress" id="scrollProgress"></div>
 <a class="skip" href="#mainContent">Skip to content</a>
 
@@ -109,13 +119,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/portfolio">Portfolio</a>
       <a href="/insights">Insights</a>
       <a href="/about">About</a>
-      <a href="/#contact">Contact</a>
+      <a href="#contact">Contact</a>
       <div class="nav-mobile-cta">
-        <a href="/#contact" class="btn btn-primary btn-sm">Free Audit →</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Free Audit →</a>
       </div>
     </nav>
     <div class="nav-right">
-      <a href="/#contact" class="btn btn-primary btn-sm">Free Audit →</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Free Audit →</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -124,84 +134,369 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 <main id="mainContent">
-<section class="page-hero">
+<!-- 1. EXECUTIVE SPLIT HERO FOR STAPE SERVER-SIDE TRACKING -->
+<section class="niche-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/services">Services</a> <span>/</span> <span>Stape Server-Side Tracking &amp; GTM</span></div>
-    <div class="role-badges">
-      <span class="role-pill is-highlight">Stape.io Server-Side GTM</span>
-      <span class="role-pill">Google Ads Enhanced Conversions</span>
-      <span class="role-pill">Meta CAPI Event Deduplication</span>
-      <span class="role-pill">Shopify · WooCommerce · Lead Gen</span>
+    <div class="breadcrumb" style="margin-bottom:18px;"><a href="/">Home</a> <span>/</span> <a href="/services">Services</a> <span>/</span> <span>Stape Server-Side Tracking &amp; GTM</span></div>
+    <div class="niche-hero-grid">
+      <div>
+        <div class="nh-pills">
+          <span class="nh-pill is-dark">Stape.io Server-Side GTM · GA4 · Meta CAPI</span>
+          <span class="nh-pill">20+ Verified Server-Side Builds</span>
+        </div>
+        <h1>Recover 25–35% Lost Conversions With <span class="script">Stape Server-Side</span></h1>
+        <p class="nh-lead">Safari ITP, iOS privacy blocks, and ad-blockers quietly blind your Google Ads and Meta algorithms—while duplicate thank-you triggers corrupt Smart Bidding. I engineer first-party <b>Web + Stape.io Server GTM pipelines</b>, SHA-256 Enhanced Conversions, and deduplicated Meta CAPI for Shopify, WooCommerce, and high-ticket lead gen.</p>
+        <ul class="nh-checks">
+          <li>First-Party Custom Subdomain + Cookie Keeper</li>
+          <li>Zero GA4 vs. Google Ads Double-Counting</li>
+          <li>Meta Pixel + CAPI event_id Deduplication</li>
+          <li>Shopify, WooCommerce, CallRail &amp; GHL Sync</li>
+        </ul>
+        <div class="nh-actions">
+          <a href="#contact" class="btn btn-primary">Book Free 30-Min Tracking Audit →</a>
+          <a href="#stape-calculator" class="btn btn-ghost">Estimate Lost Signal Value</a>
+        </div>
+      </div>
+
+      <div class="nh-visual-wrap">
+        <img src="/assets/service-server-crm.svg" alt="Stape.io Server-Side GTM, CallRail Dynamic Number Insertion, and GoHighLevel Offline Attribution Architecture" width="800" height="450" fetchpriority="high">
+      </div>
     </div>
-    <h1>Stape.io Server-Side Tracking, GA4 &amp; <span class="script">GTM Setup Specialist</span></h1>
-    <p>Stop losing 25–35% of your paid conversions to Safari ITP, iOS privacy blocks, and ad-blockers—and stop feeding duplicate thank-you page hits to Smart Bidding. I engineer clean, first-party Web + Server GTM tracking pipelines for eCommerce brands, lead-gen businesses, and agencies across the US, UK, Canada, Australia, and New Zealand.</p>
-    <div class="page-hero-bar">
-      <span>20+ Server-Side &amp; GTM Builds</span>
-      <span>100% Deduplicated Event &amp; Order IDs</span>
-      <span>SHA-256 Enhanced Conversions</span>
-      <span>CallRail &amp; GoHighLevel Offline Sync</span>
+
+    <div class="nh-trust-strip">
+      <div class="nh-stat-box">
+        <strong>20+ sGTM Builds</strong>
+        <span>Stape.io, GA4 &amp; Enhanced Conversions</span>
+      </div>
+      <div class="nh-stat-box">
+        <strong>1:1 Deduplicated</strong>
+        <span>Shared event_id &amp; transaction_id QA</span>
+      </div>
+      <div class="nh-stat-box">
+        <strong>3–5 Day Delivery</strong>
+        <span>Full Tag Assistant &amp; DebugView Proof</span>
+      </div>
+      <div class="nh-stat-box">
+        <strong>100% First-Party</strong>
+        <span>Your Domain, Your Containers, Your Data</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="results">
-  <div class="container" style="max-width:920px;">
-    <div class="sec-head center" style="margin-bottom:28px;">
-      <span class="sec-eyebrow">First-Party Conversion Engineering</span>
-      <h2 class="sec-title">What I Fix Inside Your <span class="script">GTM, GA4 &amp; Stape Stack</span></h2>
+<!-- 2. DIAGNOSTIC COMPARISON: BROKEN CLIENT-SIDE PIXELS VS. FIRST-PARTY STAPE sGTM -->
+<section class="results" style="padding:72px 0;">
+  <div class="container">
+    <div class="sec-head center" style="margin-bottom:34px;">
+      <span class="sec-eyebrow">Conversion Tracking Diagnosis</span>
+      <h2 class="sec-title">Client-Side Browser Pixels vs. <span class="script">First-Party Stape sGTM</span></h2>
+      <p class="sec-sub">Direct Answer: Standard browser pixels under-report real sales by 20–35% due to Safari ITP and ad-blockers—or double-count leads when both native Google Ads tags and imported GA4 events are active as Primary.</p>
     </div>
-    <div style="border-radius:20px;overflow:hidden;box-shadow:0 18px 46px rgba(11,18,33,.10);border:1px solid var(--line);margin-bottom:28px;background:#fff;">
-      <img src="/assets/service-server-crm.svg" alt="Stape.io Server-Side GTM, CallRail Dynamic Number Insertion, and GoHighLevel Offline Attribution Architecture" width="800" height="450" fetchpriority="high" style="width:100%;height:auto;display:block;">
+
+    <div class="leak-grid">
+      <article class="leak-card leak-bad">
+        <span class="leak-badge">BROKEN CLIENT-SIDE PLUGIN TRACKING</span>
+        <h3>Why Smart Bidding Struggles With Browser-Only Tags</h3>
+        <ul>
+          <li><b>Safari ITP 7-Day Cookie Caps:</b> JavaScript cookies expire quickly on iOS/macOS, dropping attribution on multi-day eCommerce and B2B/legal buyer journeys.</li>
+          <li><b>Ad-Blocker &amp; Privacy Blind Spots:</b> Third-party requests to <code>google-analytics.com</code> and <code>connect.facebook.net</code> get blocked before firing.</li>
+          <li><b>GA4 vs. Google Ads Double-Counting:</b> Native Google Ads tags + imported GA4 key events both marked Primary inflate leads by 2× and break Target CPA.</li>
+          <li><b>Heavy Main-Thread Script Bloat:</b> Multiple client-side marketing pixels slow down mobile LCP and hurt conversion rate.</li>
+        </ul>
+      </article>
+
+      <article class="leak-card leak-good">
+        <span class="leak-badge">THE ADS BY FAHIM STAPE SERVER-SIDE STACK</span>
+        <h3>Clean, Resilient, First-Party Signal Architecture</h3>
+        <ul>
+          <li><b>First-Party Custom Subdomain:</b> Routes events through <code>gtm.yourdomain.com</code> with Stape Custom Loader &amp; Cookie Keeper for Safari resilience.</li>
+          <li><b>Single Clean Primary Signal:</b> Native Google Ads tags with SHA-256 Enhanced Conversions set as Primary; GA4 kept Secondary for clean cross-checking.</li>
+          <li><b>Browser + Server Meta CAPI Deduplication:</b> Synchronized <code>event_id</code> + hashed user parameters push Event Match Quality (EMQ) toward 8.0–9.3/10.</li>
+          <li><b>Faster Pages + Offline CRM Sync:</b> Offloads vendor scripts to the server while feeding CallRail, GoHighLevel, and Clio GCLIDs directly to ad platforms.</li>
+        </ul>
+      </article>
     </div>
-    <article class="post-card niche-article">
-      <h2>Direct Answer: Why Hire a Dedicated Server-Side Tracking Engineer</h2>
-      <p>Standard browser pixels and auto-installed Shopify or WordPress apps break in two opposite ways: they <b>under-report real sales by 20–35%</b> when Safari ITP or ad-blockers strip cookies, and they <b>double-count leads</b> when both native Google Ads tags and imported GA4 events are left active as Primary. I replace fragile plugin setups with a unified <b>Web GTM + Stape.io Server GTM architecture</b> routed through your own first-party subdomain—delivering verified, deduplicated conversion signals to Google Ads, GA4, and Meta CAPI.</p>
+  </div>
+</section>
 
-      <h2>Complete Deliverables Included in Every Build</h2>
-      <ul class="post-takeaways" style="margin-bottom:24px;">
-        <li><b>First-Party Stape.io sGTM Provisioning:</b> Custom tagging subdomain (e.g., <code>gtm.yourdomain.com</code>), DNS CNAME/A setup, Stape Custom Loader, and Cookie Keeper for Safari ITP resistance.</li>
-        <li><b>Google Ads Conversion Tracking + Enhanced Conversions:</b> Native Google Ads conversion and remarketing tags with SHA-256 hashed email, phone, and address matching (<a href="/insights/why-ga4-and-google-ads-conversion-numbers-never-match" style="color:var(--blue);font-weight:600;">eliminating GA4 vs. Google Ads double-counting →</a>).</li>
-        <li><b>Meta Pixel + Conversions API (CAPI) Deduplication:</b> Synchronized browser + server firing with shared <code>event_id</code> values and 8.0+ Event Match Quality (<a href="/insights/server-side-tracking-stape-io-meta-capi-playbook" style="color:var(--blue);font-weight:600;">read my 2026 Stape &amp; Meta CAPI playbook →</a>).</li>
-        <li><b>Shopify &amp; WooCommerce Full-Funnel DataLayer:</b> Clean <code>view_item</code>, <code>add_to_cart</code>, <code>begin_checkout</code>, and <code>purchase</code> events with dynamic <code>transaction_id</code>, value, currency, and item arrays.</li>
-        <li><b>CallRail &amp; GoHighLevel / HubSpot Offline CRM Attribution:</b> Pass GCLID and first-party lead parameters into your CRM so offline closed deals feed straight back into Google Ads Smart Bidding.</li>
-      </ul>
+<!-- 3. PLATFORM COVERAGE & PLAYBOOKS -->
+<section class="results" style="background:#F8FAFC;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0;">
+  <div class="container">
+    <div class="sec-head center" style="margin-bottom:32px;">
+      <span class="sec-eyebrow">Full-Stack Tracking Deliverables</span>
+      <h2 class="sec-title">Engineered for <span class="script">eCommerce &amp; Lead Generation</span></h2>
+      <p class="sec-sub">Whether you run a 7-figure Shopify store or a high-CPC legal/home-services lead funnel, every tag is verified live in Tag Assistant, GA4 DebugView, and Meta Test Events.</p>
+    </div>
 
-      <h2>How the 4-Step Implementation Process Works</h2>
-      <h3>Step 1: 12-Point Tracking &amp; Attribution Audit</h3>
-      <p>I inspect your live website, GTM containers, GA4 property, Google Ads conversion summary, and Meta Events Manager to map every duplicate tag, missing linker, unhashed user field, or consent gap.</p>
+    <div class="svc-grid" style="margin-bottom:28px;">
+      <article class="svc">
+        <span class="law-pillar-num">ECOMMERCE · SHOPIFY &amp; WOOCOMMERCE</span>
+        <h3>Full-Funnel Revenue &amp; ROAS Attribution</h3>
+        <p class="svc-tag">Shopify Customer Events · WooCommerce DataLayer · Meta CAPI · Google Shopping</p>
+        <ul>
+          <li><b>Clean Funnel Events:</b> Verified <code>view_item</code>, <code>add_to_cart</code>, <code>begin_checkout</code>, and <code>purchase</code> with dynamic <code>transaction_id</code>, value, currency, and item arrays.</li>
+          <li><b>Duplicate Transaction Blocking:</b> Stape Duplicate Transaction Checker prevents thank-you page refreshes from inflating reported ROAS.</li>
+          <li><b>SHA-256 Enhanced Conversions:</b> Hashed customer email, phone, and billing address improve cross-device Google Shopping &amp; PMax bidding.</li>
+        </ul>
+        <a href="/insights/server-side-tracking-stape-io-meta-capi-playbook" class="svc-link">Read the 2026 Stape &amp; Meta CAPI Playbook →</a>
+      </article>
 
-      <h3>Step 2: DataLayer &amp; Stape Cloud Container Engineering</h3>
-      <p>I configure your Web GTM triggers and dataLayer variables alongside your first-party Stape.io server container without disrupting live traffic.</p>
+      <article class="svc svc-accent">
+        <span class="law-pillar-num">LEAD GEN · LAW FIRMS, HOME SERVICES &amp; B2B</span>
+        <h3>Phone Calls, Bookings &amp; Offline CRM Sync</h3>
+        <p class="svc-tag">CallRail DNI · Calendly · GoHighLevel · Clio Grow · HubSpot GCLID</p>
+        <ul>
+          <li><b>Verified Form &amp; Booking Triggers:</b> Custom <code>dataLayer</code> listeners for Calendly, HubSpot, Gravity Forms, and multi-step funnels (Count = One).</li>
+          <li><b>CallRail 60–90 Sec Qualified Call Rules:</b> Filters out short misdials so only real prospect calls train Google Smart Bidding.</li>
+          <li><b>Offline Closed-Deal Imports:</b> Passes hidden GCLID + SHA-256 user data from your CRM back to Google Ads when a lead signs.</li>
+        </ul>
+        <a href="/insights/why-ga4-and-google-ads-conversion-numbers-never-match" class="svc-link">Fix GA4 vs. Google Ads Double-Counting →</a>
+      </article>
+    </div>
 
-      <h3>Step 3: Live Tag Assistant, GA4 DebugView &amp; Meta Test Events QA</h3>
-      <p>Every conversion event is triggered and verified across Google Tag Assistant, GA4 DebugView, and Meta Test Events to prove 1:1 deduplication before publishing.</p>
-
-      <h3>Step 4: Handover Documentation &amp; Post-Publish Diagnostics Check</h3>
-      <p>After 72 hours of live traffic, I review your Google Ads Enhanced Conversions diagnostic tab and Meta Event Match Quality scores to confirm 100% healthy signal delivery.</p>
-
-      <hr style="border:none;border-top:1px solid var(--line);margin:32px 0;">
-      <h2>Frequently Asked Questions</h2>
-      <details style="border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;background:#F8FAFC;">
-        <summary style="font-weight:700;cursor:pointer;color:var(--navy);">What is included in your Stape.io server-side tracking setup?</summary>
-        <p style="margin:10px 0 0;color:var(--muted);line-height:1.7;">Every build includes provisioning your GTM Web and Server containers, configuring a first-party custom subdomain with Stape Custom Loader and Cookie Keeper, setting up GA4 server routing, Google Ads Conversion Tracking with SHA-256 Enhanced Conversions, Meta Pixel + Server CAPI with event_id deduplication, and full QA in Tag Assistant and Meta Events Manager.</p>
-      </details>
-      <details style="border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;background:#F8FAFC;">
-        <summary style="font-weight:700;cursor:pointer;color:var(--navy);">Can you fix Shopify or WooCommerce Google Ads conversion tracking not working?</summary>
-        <p style="margin:10px 0 0;color:var(--muted);line-height:1.7;">Yes. I audit your Shopify Customer Events pixel / extensible checkout or WooCommerce dataLayer, remove duplicate GA4 and native tag conflicts, pass dynamic transaction_id, value, currency, and hashed customer data, and verify every checkout event in GTM Preview and GA4 DebugView.</p>
-      </details>
-      <details style="border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:24px;background:#F8FAFC;">
-        <summary style="font-weight:700;cursor:pointer;color:var(--navy);">How fast can you audit and rebuild a broken GTM and GA4 container?</summary>
-        <p style="margin:10px 0 0;color:var(--muted);line-height:1.7;">Most standalone GA4, GTM, Enhanced Conversions, and Stape.io server-side container rebuilds are completed, tested, and verified within 3 to 5 business days, starting with a free 30-minute diagnostic audit.</p>
-      </details>
-
-      <div style="background:#F8FAFC;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-        <div>
-          <strong style="display:block;font-size:1.1rem;color:var(--navy);">Need your GA4, GTM, Enhanced Conversions or Stape container fixed?</strong>
-          <span style="color:var(--muted);font-size:.92rem;">Book a free 30-minute diagnostic screen-share and I'll show you exactly what's firing on your site.</span>
-        </div>
-        <a href="/#contact" class="btn btn-primary">Book Free Tracking Audit →</a>
+    <div class="law-subniche-grid">
+      <div class="law-sub-card">
+        <strong>Stape.io Cloud sGTM</strong>
+        <p>Custom subdomain DNS, Custom Loader, Cookie Keeper, and regional server provisioning close to your buyers.</p>
       </div>
-    </article>
+      <div class="law-sub-card">
+        <strong>GA4 &amp; Consent Mode v2</strong>
+        <p>Clean GA4 event architecture with GDPR/CCPA-ready Consent Mode v2 signals before conversion tags fire.</p>
+      </div>
+      <div class="law-sub-card">
+        <strong>Meta Pixel + Server CAPI</strong>
+        <p>Dual browser + server setup with 1:1 <code>event_id</code> deduplication and enriched customer match parameters.</p>
+      </div>
+      <div class="law-sub-card">
+        <strong>72-Hour Post-Launch QA</strong>
+        <p>Live check of Google Ads Enhanced Conversions diagnostics, Stape logs, and Meta EMQ scores after 72 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. INTERACTIVE LOST ATTRIBUTION / SIGNAL RECOVERY CALCULATOR -->
+<section class="results" id="stape-calculator" style="padding:72px 0;">
+  <div class="container" style="max-width:960px;">
+    <div class="sec-head center" style="margin-bottom:28px;">
+      <span class="sec-eyebrow">Interactive Attribution Impact Model</span>
+      <h2 class="sec-title">Estimate Your <span class="script">Unattributed Conversion Gap</span></h2>
+      <p class="sec-sub">Select your business model to estimate how many real conversions and ad-spend dollars are currently hidden by Safari ITP, ad-blockers, and broken client-side pixels.</p>
+    </div>
+
+    <div class="law-calc-card">
+      <div class="law-calc-presets">
+        <button type="button" class="law-preset is-active" data-spend="10000" data-case="180" data-cpa="45">Shopify eCommerce ($10K/mo)</button>
+        <button type="button" class="law-preset" data-spend="15000" data-case="4500" data-cpa="450">Law Firm / High-Ticket ($15K/mo)</button>
+        <button type="button" class="law-preset" data-spend="8000" data-case="1800" data-cpa="150">Home Services ($8K/mo)</button>
+        <button type="button" class="law-preset" data-spend="25000" data-case="240" data-cpa="55">Scaling DTC Brand ($25K/mo)</button>
+      </div>
+
+      <div class="law-calc-inputs">
+        <div>
+          <label for="lawSpend">Monthly Paid Ad Spend ($)</label>
+          <input type="number" id="lawSpend" value="10000" min="1000" step="500">
+        </div>
+        <div>
+          <label for="lawCpa">Current Cost Per Conversion ($)</label>
+          <input type="number" id="lawCpa" value="45" min="10" step="5">
+        </div>
+        <div>
+          <label for="lawCaseVal">Avg. Order / Client Value ($)</label>
+          <input type="number" id="lawCaseVal" value="180" min="20" step="20">
+        </div>
+      </div>
+
+      <div class="law-calc-outputs">
+        <div>
+          <span style="color:#FCA5A5;">EST. BLIND AD SPEND (28% SIGNAL LOSS)</span>
+          <strong id="lawWasteOut" style="color:#F87171;">$2,800 / mo</strong>
+          <small>Spend optimizing without full iOS/Safari data</small>
+        </div>
+        <div>
+          <span style="color:#93C5FD;">RECOVERED TRACKED SIGNALS / MO</span>
+          <strong id="lawCasesOut" style="color:#4ADE80;">+62.2 Signals / mo</strong>
+          <small>Restored conversions feeding Smart Bidding</small>
+        </div>
+        <div>
+          <span style="color:#FBBF24;">ATTRIBUTED REVENUE VISIBILITY / MO</span>
+          <strong id="lawRevOut" style="color:#FBBF24;">+$11,200 / mo</strong>
+          <small>Previously dark conversions now measurable</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 6-STEP IMPLEMENTATION & QA PROCESS -->
+<section class="results" style="background:#F8FAFC;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0;">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="sec-eyebrow">3 to 5 Business Day Delivery</span>
+      <h2 class="sec-title">My 6-Step <span class="script">Server-Side Engineering</span> Process</h2>
+      <p class="sec-sub">Zero guesswork, zero broken live checkout pages. Every container is engineered in preview mode and verified end-to-end before publishing.</p>
+    </div>
+
+    <div class="law-pillars-grid">
+      <div class="law-pillar-card">
+        <span class="law-pillar-num">STEP 01</span>
+        <h3>12-Point Tracking Audit</h3>
+        <p>Inspect your live site, GTM containers, GA4 property, Google Ads conversions, and Meta Events Manager for duplicate tags and consent gaps.</p>
+      </div>
+      <div class="law-pillar-card">
+        <span class="law-pillar-num">STEP 02</span>
+        <h3>DataLayer &amp; Subdomain DNS</h3>
+        <p>Configure your clean Web dataLayer variables and provision your first-party Stape.io subdomain (<code>gtm.yourdomain.com</code>) with Custom Loader.</p>
+      </div>
+      <div class="law-pillar-card">
+        <span class="law-pillar-num">STEP 03</span>
+        <h3>Server GTM &amp; GA4 Routing</h3>
+        <p>Route a single clean Web GA4 stream into your Server container, fanning out to GA4, Google Ads Conversion Tracking, and Remarketing.</p>
+      </div>
+      <div class="law-pillar-card">
+        <span class="law-pillar-num">STEP 04</span>
+        <h3>SHA-256 &amp; Meta CAPI Setup</h3>
+        <p>Enable Google Ads Enhanced Conversions and Meta Server CAPI with matching <code>event_id</code> deduplication and hashed user fields.</p>
+      </div>
+      <div class="law-pillar-card">
+        <span class="law-pillar-num">STEP 05</span>
+        <h3>Live Tag Assistant &amp; DebugView QA</h3>
+        <p>Run real test orders or test leads across Tag Assistant, GA4 DebugView, Stape Logs, and Meta Test Events to prove 1:1 deduplication.</p>
+      </div>
+      <div class="law-pillar-card">
+        <span class="law-pillar-num">STEP 06</span>
+        <h3>72-Hour Diagnostics Handover</h3>
+        <p>Audit your live Enhanced Conversions diagnostics and Meta EMQ scores after 72 hours of real traffic, plus full container documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FAQ SECTION -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="sec-eyebrow">Server-Side Tracking FAQ</span>
+      <h2 class="sec-title">Common Questions About <span class="script">Stape &amp; GTM</span></h2>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>What is included in your Stape.io server-side tracking setup?<span class="faq-ico">+</span></summary>
+        <p>Every build includes provisioning your GTM Web and Server containers, configuring a first-party custom subdomain with Stape Custom Loader and Cookie Keeper, setting up GA4 server routing, Google Ads Conversion Tracking with SHA-256 Enhanced Conversions, Meta Pixel + Server CAPI with event_id deduplication, and full QA in Tag Assistant and Meta Events Manager.</p>
+      </details>
+      <details>
+        <summary>Can you fix Shopify or WooCommerce Google Ads conversion tracking not working?<span class="faq-ico">+</span></summary>
+        <p>Yes. I audit your Shopify Customer Events pixel / extensible checkout or WooCommerce dataLayer, remove duplicate GA4 and native tag conflicts, pass dynamic transaction_id, value, currency, and hashed customer data, and verify every checkout event in GTM Preview and GA4 DebugView.</p>
+      </details>
+      <details>
+        <summary>How fast can you audit and rebuild a broken GTM and GA4 container?<span class="faq-ico">+</span></summary>
+        <p>Most standalone GA4, GTM, Enhanced Conversions, and Stape.io server-side container rebuilds are completed, tested, and verified within 3 to 5 business days, starting with a free 30-minute diagnostic audit.</p>
+      </details>
+      <details>
+        <summary>Will server-side tracking cause double-counting in Google Ads or Meta Ads?<span class="faq-ico">+</span></summary>
+        <p>No. I enforce strict 1:1 event_id and transaction_id deduplication between Web and Server containers, pause redundant hardcoded pixels, and configure only one Primary conversion source per action in Google Ads.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FULL TRACKING AUDIT LEAD CAPTURE FORM -->
+<section class="cta" id="contact">
+  <div class="container cta-box">
+    <div class="cta-grid">
+      <div class="cta-inner">
+        <span class="sec-eyebrow light">Free 30-Minute Tracking Diagnostic</span>
+        <h2 class="cta-title">Fix Your Broken Tracking &amp;<br><span class="script">Trust Your Numbers Again.</span></h2>
+        <p>Book a free 30-minute screen-share audit. I will inspect your live GTM container, GA4 events, Google Ads conversion actions, and Meta Pixel/CAPI setup—and show you every leak or double-count live.</p>
+
+        <div class="direct-contact-cards">
+          <a href="https://wa.me/8801521724734?text=Hi%20Fahim%2C%20I%20need%20help%20with%20Stape%20Server-Side%20Tracking%2C%20GA4%2C%20or%20Google%20Ads%20Conversion%20Tracking" target="_blank" rel="noopener" class="dc-card">
+            <span class="dc-ico wa">💬</span>
+            <div>
+              <small>Fastest Reply (WhatsApp Direct)</small>
+              <b>+880 1521-724734</b>
+            </div>
+          </a>
+          <a href="mailto:ferdouswahidfahim24@gmail.com?subject=Stape%20Server-Side%20Tracking%20%26%20GTM%20Audit" class="dc-card">
+            <span class="dc-ico mail">✉️</span>
+            <div>
+              <small>Direct Email</small>
+              <b>ferdouswahidfahim24@gmail.com</b>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <form class="audit-form" id="auditForm" aria-label="Server-Side Tracking Audit Request Form">
+        <h3>Request Your Free Tracking Audit</h3>
+        <p class="af-sub">Pick a preferred call window and share your platform &amp; tracking stack below.</p>
+
+        <div class="booking-bar">
+          <div class="bb-head"><span>📅 Preferred 30-Min Call Window</span><span>Google Meet / Zoom / WA</span></div>
+          <div class="slot-pills">
+            <button type="button" class="slot-pill" data-slot="US/CA Morning (9AM–12PM EST)">US/CA Morning</button>
+            <button type="button" class="slot-pill" data-slot="UK/EU Afternoon (1PM–5PM GMT)">UK/EU Hours</button>
+            <button type="button" class="slot-pill" data-slot="AU/NZ Business Hours (AEST)">AU/NZ Hours</button>
+          </div>
+        </div>
+
+        <div class="af-row">
+          <div class="af-field">
+            <label for="afName">Your Name *</label>
+            <input type="text" id="afName" name="name" placeholder="e.g. Alex Rivera" required>
+          </div>
+          <div class="af-field">
+            <label for="afEmail">Work Email *</label>
+            <input type="email" id="afEmail" name="email" placeholder="e.g. alex@brandstore.com" required>
+          </div>
+        </div>
+
+        <div class="af-row">
+          <div class="af-field">
+            <label for="afPhone">Phone / WhatsApp *</label>
+            <input type="tel" id="afPhone" name="phone" placeholder="e.g. +1 555 234 5678" required>
+          </div>
+          <div class="af-field">
+            <label for="afSite">Website URL</label>
+            <input type="text" id="afSite" name="site" placeholder="e.g. brandstore.com">
+          </div>
+        </div>
+
+        <div class="af-row">
+          <div class="af-field">
+            <label for="afService">Platform / Stack</label>
+            <select id="afService" name="service">
+              <option value="Tracking: Shopify + Stape sGTM + Meta CAPI" selected>Shopify + Stape sGTM + Meta CAPI</option>
+              <option value="Tracking: WooCommerce / WordPress + GA4 / GTM">WooCommerce / WordPress + GA4/GTM</option>
+              <option value="Tracking: Lead Gen + CallRail + CRM Offline Sync">Lead Gen + CallRail + CRM Offline Sync</option>
+              <option value="Tracking: Fix GA4 vs Google Ads Double-Counting">Fix GA4 vs. Google Ads Double-Counting</option>
+              <option value="Tracking: Custom Web App / Agency White-Label">Custom Web App / Agency Partner</option>
+            </select>
+          </div>
+          <div class="af-field">
+            <label for="afBudget">Monthly Ad Spend</label>
+            <select id="afBudget" name="budget">
+              <option value="One-Time Tracking Rebuild Only">One-Time Tracking Rebuild Only</option>
+              <option value="$3K – $10K / mo" selected>$3K – $10K / mo</option>
+              <option value="$10K – $30K / mo">$10K – $30K / mo</option>
+              <option value="$30K+ / mo">$30K+ / mo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="af-field">
+          <label for="afGoal">What Tracking Issue Are You Seeing?</label>
+          <textarea id="afGoal" name="goal" placeholder="e.g. Missing Shopify purchases, GA4 vs Google Ads mismatch, low Meta EMQ, or need Stape.io setup..."></textarea>
+        </div>
+
+        <div class="af-actions">
+          <button type="submit" class="btn btn-primary">Request Free Tracking Audit →</button>
+          <button type="button" id="afWaBtn" class="btn af-wa-btn">💬 Send via WhatsApp</button>
+        </div>
+
+        <div id="afStatus" class="af-Status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
   </div>
 </section>
 </main>
@@ -241,9 +536,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>Core Expertise</h3>
         <a href="/google-ads-law-firms">Google Ads for Law Firms</a>
         <a href="/google-ads-personal-injury-lawyers">Personal Injury Lawyers PPC</a>
+        <a href="/google-ads-immigration-family-lawyers">Family &amp; Immigration Law PPC</a>
         <a href="/google-ads-home-services">Home Services, HVAC &amp; Roofing</a>
         <a href="/stape-server-side-tracking">Stape.io Server-Side &amp; CAPI</a>
-        <a href="/services#conversion-tracking">GA4, GTM &amp; CallRail Tracking</a>
         <a href="/#calculator">Ad Spend Leak Calculator</a>
       </div>
 
@@ -253,7 +548,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span>🟢 OPEN THIS WEEK</span>
         </div>
         <p>Get a live diagnostic walkthrough of your Google Ads search terms, CPA trends, and GTM/GA4 conversion signals.</p>
-        <a href="/#contact" class="fe-audit-btn">
+        <a href="#contact" class="fe-audit-btn">
           <span>Claim Your Free Audit</span>
           <span>→</span>
         </a>
@@ -276,10 +571,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<a href="https://wa.me/8801521724734?text=Hi%20Fahim%2C%20I'd%20like%20to%20discuss%20your%20Google%20Ads%20%26%20Tracking%20services" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/8801521724734?text=Hi%20Fahim%2C%20I%20need%20help%20with%20Stape%20Server-Side%20Tracking%2C%20GA4%2C%20or%20GTM" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4-4.9-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.4-.1.7.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1s.7-.8.9-1.1c.2-.3.4-.2.7-.1s1.7.8 2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>
   <span>Quick Audit Chat</span>
 </a>
+
 <script src="/js/main.js"></script>
+<script>
+(function(){
+  var spendEl = document.getElementById("lawSpend");
+  var cpaEl = document.getElementById("lawCpa");
+  var valEl = document.getElementById("lawCaseVal");
+  var wasteOut = document.getElementById("lawWasteOut");
+  var casesOut = document.getElementById("lawCasesOut");
+  var revOut = document.getElementById("lawRevOut");
+  var presets = document.querySelectorAll(".law-preset");
+  function calc(){
+    if(!spendEl || !cpaEl || !valEl) return;
+    var spend = Math.max(500, parseFloat(spendEl.value)||10000);
+    var cpa = Math.max(5, parseFloat(cpaEl.value)||45);
+    var val = Math.max(10, parseFloat(valEl.value)||180);
+    var blindSpend = Math.round(spend * 0.28);
+    var curSignals = spend / cpa;
+    var recovered = Math.max(1, curSignals * 0.28);
+    var rev = Math.round(recovered * val);
+    wasteOut.textContent = "$" + blindSpend.toLocaleString() + " / mo";
+    casesOut.textContent = "+" + recovered.toFixed(1) + " Signals / mo";
+    revOut.textContent = "+$" + rev.toLocaleString() + " / mo";
+  }
+  [spendEl, cpaEl, valEl].forEach(function(el){ if(el) el.addEventListener("input", calc); });
+  presets.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      presets.forEach(function(b){ b.classList.remove("is-active"); });
+      btn.classList.add("is-active");
+      spendEl.value = btn.getAttribute("data-spend");
+      cpaEl.value = btn.getAttribute("data-cpa");
+      valEl.value = btn.getAttribute("data-case");
+      calc();
+    });
+  });
+  calc();
+})();
+</script>
 </body>
 </html>
